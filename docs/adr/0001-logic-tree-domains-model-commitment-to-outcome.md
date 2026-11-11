@@ -1,0 +1,79 @@
+# 1. Logic-tree domains model the path from commitment to outcome
+
+Date: 2026-11-11
+
+## Status
+
+Proposed (2026-11-11). Tried on one initiative before this record was written; all ten competency questions below passed.
+
+## Context
+
+Logic trees (Goal Tree, Current Reality Tree, Future Reality Tree, Prerequisite Tree) are often built from records kept in other tools: product objectives, key results and initiatives in a product-management tool, and goals, targets, projects and next actions in a self-organization (for example Holacracy) tool. The trees are then reviewed with the Categories of Legitimate Reservation (CLR).
+
+Two problems appear when this is done:
+
+1. **A box's source and its logical role are different things.** An objective is a source record; in a tree it acts as an effect. Tool-specific classes show where a box came from, and Thinking Process classes show its role. Without a rule that links the two, checks cannot reason about tool-specific classes.
+2. **Objectives, key results, goals and targets are commitments, not results.** Each is a decision to pursue an outcome and stays a hypothesis until there is evidence. A tree that links an initiative straight to an objective hides the steps in between: something is released, it is launched, and a customer acts on it. Skipping those steps is "Field of Dreams" thinking ("build it and they will come").
+
+Options considered:
+
+| Option | Summary | Outcome |
+|---|---|---|
+| A. Thinking Process classes only | Keep Goal, Effect, Action and so on; record the source type in an attribute | Rejected: hides the release, launch and customer steps and the framework terms |
+| B. One "Commitment to Outcome" domain | One custom domain for the whole chain | Rejected: mixes governance, product and customer terms in one list |
+| C. Three domains plus a mapping layer | One domain per source area; every class declares a logical kind; the cross-domain chain is a mapping | Chosen |
+
+## Decision
+
+1. **Three domains.**
+
+   | Domain | Classes (logical kind) |
+   |---|---|
+   | Self-Organization | Purpose, Accountability, Domain, Policy, Project, Next Action, Checklist Item, Metric, Tension, Trigger, Request, Governance Proposal, Inferred, Org Goal (effect), Org Target (indicator) |
+   | Product Lifecycle | Objective (effect), Key Result (indicator), Initiative (action = commitment), Release (effect), Launch (action) |
+   | Customer Progress | Job (precondition), Switch Trigger (precondition), Customer Outcome (effect), Pain Point (undesirable effect), Push (effect), Pull (effect), Anxiety (obstacle), Habit (obstacle), Customer Action (observed effect), Design Opportunity (bridge) |
+
+   Customer Progress draws on Jobs To Be Done and Outcome-Driven Innovation (Job, Customer Outcome) and on the forces of progress (Push, Pull, Anxiety, Habit).
+
+2. **Every class declares a logical kind:** effect, action, precondition, obstacle or indicator. Checks and CLR review read the kind, not the class name, so a box can keep its source class and still be checked.
+3. **Thinking Process classes stay.** The built-in Obstacle is not duplicated. A self-organization "Action" is named "Next Action" so it does not clash with the Thinking Process "Action". A self-organization "Trigger" (of a tension) differs from a JTBD "Switch Trigger". A self-organization "Goal" is named "Org Goal".
+4. **"Commitment to Outcome" names the mapping layer, not a domain.** The canonical chain is:
+   - Initiative → Release
+   - Release AND Launch AND customer need (Precondition) → Customer Action
+   - Customer Action → Customer Outcome → business outcome → Objective
+   - The forces gate the launch: Push AND Pull AND Switch Trigger AND NOT Anxiety AND NOT Habit → Launch
+5. **One box per source record.** Lifecycle state goes in a `commitment` attribute. Evidence goes in `evidence` (hypothesis, partial, evidenced, refuted) and `evidence_ref`.
+6. **A shared attribute set:** `src_type`, `src_id`, `stratum`, `commitment`, `evidence`, `evidence_ref`, `facet`, `journey_step`, `evidence_source`, `assumption`, `kind`. Values stay short. Links and long identifiers go in the box note, because some tools fail on long values without spaces.
+7. **Outcome facets are attributes, not classes.** Balanced Scorecard perspectives and Lean SQDC are two value sets for `facet`. A business outcome with facet=Customer (the business's measure of its customers) is not a Customer Outcome (the customer's own success measure, written in ODI form: "Minimize the time it takes to …").
+8. **Competency questions are the acceptance tests.**
+
+   | ID | Question |
+   |---|---|
+   | CQ-01 | Does every box state its `src_type`? |
+   | CQ-02 | Does each box's class fit its source type? |
+   | CQ-03 | Does every initiative reach an objective? |
+   | CQ-04 | Does every objective trace up to an anchor (an objective that mirrors an approved organizational goal)? |
+   | CQ-05 | Is there no stratum inversion (a cause at a higher stratum than its effect)? |
+   | CQ-06 | Is every edge that skips two or more strata flagged `level_skip=yes`? |
+   | CQ-07 | Does each source record appear in exactly one box? |
+   | CQ-08 | Does every edge have a source, or `assumption=yes`? |
+   | CQ-09 | Is there no path from an Initiative or Release to an outcome that skips Customer Action, and does every Customer Action have Release AND Launch AND a Precondition? |
+   | CQ-10 | Does every outcome state its `evidence`, with an `evidence_ref` when it is `evidenced`? |
+
+   CQ-09 is the Field of Dreams check.
+
+9. **Strata follow Stratified Systems Theory.** `stratum` uses the levels I to VIII of time span of discretion (after Elliott Jaques).
+
+## Consequences
+
+- **Tool layers implement this vocabulary.** A Flying Logic tool layer creates the three domains and runs the competency questions in its tree check. A change to this vocabulary needs a matching change there.
+- **A formal ontology can follow.** The domains and the mapping layer can be published as SKOS concept schemes, with SHACL shapes for the competency questions.
+- **The pilot left four classes unused:** Org Goal, Org Target, Pain Point and Design Opportunity. A later tree with self-organization records or customer research tests them.
+- **"Objective" also exists in the Prerequisite Tree vocabulary.** Trees that use both need the logical kind to tell them apart.
+- **Direct initiative → objective links in existing trees are kept and tagged**, so CQ-09 reports them instead of hiding them.
+
+## Open points
+
+1. Is the list of allowed `src_type` values complete?
+2. CQ-06: which skips are allowed, for example a key result one or two strata below its objective?
+3. Should CQ-04 fail, or only warn, while existing objectives are still being re-parented under anchors?

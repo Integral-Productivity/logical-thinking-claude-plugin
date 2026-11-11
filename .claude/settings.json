@@ -1,0 +1,35 @@
+{
+  "extraKnownMarketplaces": {
+    "integral-productivity-internal": {
+      "source": {
+        "source": "github",
+        "repo": "Integral-Productivity/marketplace-internal"
+      }
+    },
+    "integral-productivity-labs": {
+      "source": {
+        "source": "github",
+        "repo": "Integral-Productivity/marketplace-labs"
+      }
+    }
+  },
+  "enabledPlugins": {
+    "integral-productivity-engineering@integral-productivity-internal": true,
+    "product-architecture@integral-productivity-internal": true,
+    "software-architecture@integral-productivity-labs": true,
+    "lean-management@integral-productivity-labs": true,
+    "compound-engineering@integral-productivity-labs": true
+  },
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/install-git-ai.sh"
+          }
+        ]
+      }
+    ]
+  }
+}

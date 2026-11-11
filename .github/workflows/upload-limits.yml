@@ -1,0 +1,42 @@
+name: Upload limits
+
+# Claude's plugin upload validator (Customize > Plugins) rejects a plugin whose
+# plugin.json description is over 500 characters, or whose SKILL.md lacks a
+# name or has a description over 1024 characters. `claude plugin validate`
+# checks none of these. Upload is how a private plugin reaches Claude Desktop
+# and Chat projects, so a break is caught on the PR instead of at install time.
+#
+# Planned to move into the shared reusable workflows (devops-excellence#777);
+# this job then becomes a thin caller.
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  upload-limits:
+    name: Upload limits
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Setup Node
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: '22'
+
+      - name: Test the check
+        run: node --test scripts/check-upload-limits.test.mjs
+
+      # The template repo itself has no manifest. Every repo made from it does,
+      # and from then on a missing manifest fails this step.
+      - name: Check upload limits
+        if: hashFiles('.claude-plugin/plugin.json') != '' || github.repository != 'Integral-Productivity/template-claude-plugin'
+        run: node scripts/check-upload-limits.mjs .

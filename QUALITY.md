@@ -107,7 +107,7 @@ The evaluation set is the evidence for M1, M2, and MS1. It is built from neutral
 
 ### Composition
 
-- **Seeds.** Plan examples AE1-AE6 are the first neutral seeds. They are small, so they give a smoke baseline, not a full one. AE4 needs an unreadable-image fixture.
+- **Seeds.** Plan examples AE1 and AE2 are the first defect seeds, and AE3 supplies a clean lookalike. AE4-AE6 test unreadable input, depth, and question mode, so they wait for a later set (AE4 needs an unreadable-image fixture). The first set's scope is in [docs/plans/2026-11-12-0418-feat-evaluation-set-factory-plan.md](docs/plans/2026-11-12-0418-feat-evaluation-set-factory-plan.md).
 - **Mutants.** Each mutant ships with an answer key (the category, the entity, and the expected finding) and a **repaired twin**. The review must flag the mutant and stay silent on the twin.
 - **Clean lookalikes.** Valid constructs that look like defects: gates, cause AND NOT mitigation groups, long but sufficient AND groups. They form the clean set for M2.
 - **Multi-defect trees.** Trees with two or three defects of mixed categories, so a miss after the first finding shows up.

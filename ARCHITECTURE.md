@@ -49,6 +49,7 @@ The two meet at one point: the **finding**. A finding from either repository nam
 | Domains model the path from commitment to outcome; every class declares a logical kind | [ADR 0001](docs/adr/0001-logic-tree-domains-model-commitment-to-outcome.md) | Proposed |
 | The primary user is a self-guided practitioner, human or agent | [ADR 0002](docs/adr/0002-primary-user-is-a-self-guided-practitioner-human-or-agent.md) | Accepted |
 | The CLR review is on by default | [ADR 0003](docs/adr/0003-clr-review-is-on-by-default.md) | Accepted |
+| The core vocabulary is stable after three releases without a breaking change | [ADR 0004](docs/adr/0004-core-vocabulary-is-stable-after-three-releases.md) | Accepted |
 
 ## Architectural characteristics
 
@@ -89,7 +90,7 @@ FF7 and FF8 call a language model. They are costly and not fully repeatable, so 
 
 - The core terms live in one registry file with a content hash.
 - An addition is allowed. A rename, a removal, or a changed definition fails FF6 and needs an ADR.
-- The vocabulary is **stable** when no breaking change has shipped for a set number of releases and the evaluation set stays at or above its floors. The number of releases is an open decision.
+- The vocabulary is **stable** after three consecutive releases with no breaking change, while the evaluation set stays at or above its floors ([ADR 0004](docs/adr/0004-core-vocabulary-is-stable-after-three-releases.md)).
 
 ## Repository layout
 
@@ -108,5 +109,4 @@ FF7 and FF8 call a language model. They are costly and not fully repeatable, so 
 
 - Which file holds the core vocabulary registry, and in which format.
 - The shared finding schema, agreed with the tool repository.
-- The number of releases without a breaking change that makes the vocabulary stable.
 - When an evaluation run may become a merge gate.

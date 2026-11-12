@@ -33,6 +33,7 @@ Each item in STRATEGY.md has a stable ID. Other files refer to the ID, not to a 
 | M2 | Metric: false findings per clean tree |
 | M3 | Metric: findings acted on |
 | M4 | Metric: chain completion |
+| M5 | Metric: findings before first action |
 | T1 | Track: CLR review and core vocabulary |
 | T2 | Track: guided chain |
 | T3 | Track: tool link |
@@ -54,7 +55,7 @@ Read each line as "the claims below it, together, are enough for the claim above
     - Authors act on findings: M3.
   - **Practitioners finish the chain** because T2 guides each step and the review does not stall the flow.
     - Chain is guided: T2, M4, MS2.
-    - Review does not stall the flow: BR1, proposed M5.
+    - Review does not stall the flow: BR1, M5.
   - **Findings read alike across both repositories:** T3, FF5.
   - **The method works in real domains without core change:** T5, B3, RS1, FF6, FF7, MS3.
   - **The boundaries hold:** B1 (FF4), B2 (session record), B4 (FF3), B5 and B6 (judgment at each review).
@@ -67,9 +68,9 @@ These are the undeveloped claims. Each one is a strategy test to resolve.
 |---|---|---|
 | T3 Tool link | No metric and no milestone | FF5: a shared finding schema check |
 | T5 Domain extension | Only a milestone (MS3) | FF6 and FF7 |
-| BR1 Without delay | No metric measures time, turns, or volume of findings | M5, proposed below |
+| BR1 Without delay | Resolved: M5 added to STRATEGY.md (2026-11-12) | M5 |
 | B2 Repair after permission | No check | The session record notes whether each repair had permission |
-| RS1 "Core vocabulary is stable" | "Stable" has no definition | The stability rule in [ARCHITECTURE.md](ARCHITECTURE.md#core-vocabulary-stability) |
+| RS1 "Core vocabulary is stable" | Resolved: three releases without a breaking change (ADR 0004) | FF6 and the stability rule in [ARCHITECTURE.md](ARCHITECTURE.md#core-vocabulary-stability) |
 | MS1-MS3 | Not dated | Dates follow the first baseline run |
 | Sound decisions | No metric measures decision quality | Accepted surrogate: M1-M3 stand in for it; recorded here so the gap stays visible |
 
@@ -94,7 +95,7 @@ Each metric is defined before the first evaluation run, so the goalposts cannot 
 | M2 | Findings raised on trees with no seeded defect | Evaluation set, clean trees and lookalikes | Clean trees | Open decision | After baseline | Open |
 | M3 | Share of findings the author accepts, repairs, or answers | Session record | Findings shown | None until field data exists | After baseline | Defined |
 | M4 | Share of sessions, human or agent, that finish the chain of questions | Session record, from the report of unanswered links | Sessions started | None until the first chain skill ships | After baseline | Defined |
-| M5 | Findings shown before the first one the author acts on, or review turns per completed chain | Session record and evaluation runs | Sessions, or completed chains | Open decision | After baseline | Proposed, not yet in STRATEGY.md |
+| M5 | Number of findings the author reads before the first one they act on | Session record and evaluation runs | Sessions | Open decision: the band | After baseline | Defined |
 
 A report says "floor met, target pending" when a target is not yet set. It never says "no data" for a metric with a floor.
 
@@ -168,8 +169,7 @@ Rebuttals are the only field evidence of false findings. At each quality review,
 Changes to floors, targets, operators, or the reviewer version policy are recorded as ADRs in [docs/adr/](docs/adr/). Open decisions:
 
 - The M2 floor (plan: "The planner sets the threshold, because no baseline exists today").
-- Whether to add M5 to STRATEGY.md, and its band.
-- The number of releases without a breaking change that makes the core vocabulary stable.
+- The band for M5 (M5 itself was added to STRATEGY.md on 2026-11-12).
 - When an evaluation run may block a merge.
 - ADR 0001 open points on fail versus warn.
 

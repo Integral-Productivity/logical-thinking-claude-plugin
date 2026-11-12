@@ -4,7 +4,7 @@ Date: 2026-11-11
 
 ## Status
 
-Proposed (2026-11-11). Tried on one initiative before this record was written; all ten competency questions below passed.
+Proposed (2026-11-11). Tried on one initiative before this record was written; all ten competency questions below passed. Open points decided 2026-11-12 (decisions 10 to 12).
 
 ## Context
 
@@ -63,6 +63,18 @@ Options considered:
    CQ-09 is the Field of Dreams check.
 
 9. **Strata follow Stratified Systems Theory.** `stratum` uses the levels I to VIII of time span of discretion (after Elliott Jaques).
+10. **`src_type` names the source tool and the record type** as `<tool>:<RecordType>`. `none` marks a box that exists only in the tree, and `research` marks evidence from a source that has no tool record. The allowed values for the reference tool set are:
+
+    | Tool (prefix) | Record types |
+    |---|---|
+    | Product management, Productboard (`pb:`) | Product, Component, Feature, Subfeature, ReleaseGroup, Release, Objective, KeyResult, Initiative, Opportunity, Finding |
+    | Self-organization, GlassFrog (`gf:`) | Role (for Purpose), Accountability, Domain, Policy, Project, Action, ChecklistItem, Metric, Tension, Goal, Target |
+    | User research, Great Question (`gq:`) | Study, Session, Highlight, Insight, Reel, Response |
+    | Other | `research`, `none` |
+
+    People records (customers, organizations, research candidates and participants) are not box sources: a box describes a claim, not a person. Productboard's v2 API exposes no Topic or Theme record type, so none is listed. CQ-02 maps each class to the `src_type` values it allows.
+11. **CQ-06 flags every edge that skips two or more strata.** No skip is allowed silently. CLR review clears a reviewed skip with `skip_ok=yes` and gives the reason in the edge note. A key result one stratum below its objective is not a skip.
+12. **CQ-04 warns until every existing objective has an anchor, then fails.** The warning gives the count of objectives without an anchor. It becomes a failure when the re-parenting of existing objectives is complete.
 
 ## Consequences
 
@@ -74,6 +86,4 @@ Options considered:
 
 ## Open points
 
-1. Is the list of allowed `src_type` values complete?
-2. CQ-06: which skips are allowed, for example a key result one or two strata below its objective?
-3. Should CQ-04 fail, or only warn, while existing objectives are still being re-parented under anchors?
+None. The three open points of 2026-11-11 were decided on 2026-11-12 (decisions 10 to 12).

@@ -52,13 +52,18 @@ export function insufficiencyTargets(tree) {
 }
 
 // Removes one positive condition from an AND group, so the remaining causes
-// are not enough for the effect. The condition chosen rotates with the group's
-// position, so different groups lose conditions in different slots.
+// are not enough for the effect. A precondition is removed when the group has
+// one, so the actions above the group keep their intended effects; the choice
+// rotates with the group's position, so groups lose conditions in different
+// slots.
 export function removeCondition(seed, groupId) {
   const index = seed.groups.findIndex((g) => g.id === groupId);
   if (index < 0) throw new Error(`no group ${groupId}`);
-  const candidates = positives(seed, seed.groups[index]);
-  if (candidates.length < 2) throw new Error(`group ${groupId} has fewer than two positive conditions`);
+  const members = positives(seed, seed.groups[index]);
+  if (members.length < 2) throw new Error(`group ${groupId} has fewer than two positive conditions`);
+  const kindOf = (arrowId) => seed.entities.find((x) => x.id === seed.arrows.find((y) => y.id === arrowId).from).kind;
+  const preconditions = members.filter((id) => kindOf(id) === 'precondition');
+  const candidates = preconditions.length ? preconditions : members;
   const removed = seed.arrows.find((x) => x.id === candidates[index % candidates.length]);
   const effect = removed.to;
   const sinks = new Set(seed.entities.filter((x) => !seed.arrows.some((y) => y.from === x.id)).map((x) => x.id));

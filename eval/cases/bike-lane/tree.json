@@ -1,0 +1,50 @@
+{
+  "entities": [
+    {
+      "id": "paint",
+      "text": "Paint a bike lane on the main road",
+      "kind": "injection"
+    },
+    {
+      "id": "marked",
+      "text": "Cyclists have a marked space on the road",
+      "kind": "effect"
+    },
+    {
+      "id": "respect",
+      "text": "Drivers keep out of the marked lane",
+      "kind": "precondition"
+    },
+    {
+      "id": "safer",
+      "text": "Cyclists feel safer riding on the main road",
+      "kind": "effect"
+    }
+  ],
+  "arrows": [
+    {
+      "id": "paint-to-marked",
+      "from": "paint",
+      "to": "marked"
+    },
+    {
+      "id": "marked-to-safer",
+      "from": "marked",
+      "to": "safer"
+    },
+    {
+      "id": "respect-to-safer",
+      "from": "respect",
+      "to": "safer"
+    }
+  ],
+  "groups": [
+    {
+      "id": "safer-and",
+      "arrows": [
+        "marked-to-safer",
+        "respect-to-safer"
+      ]
+    }
+  ]
+}

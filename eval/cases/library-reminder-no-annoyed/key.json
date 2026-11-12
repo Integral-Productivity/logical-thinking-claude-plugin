@@ -1,0 +1,13 @@
+{
+  "twin": "library-reminder",
+  "entries": [
+    {
+      "position": 1,
+      "category": "Possible negative branch",
+      "matchSet": [
+        "reminder"
+      ],
+      "expected": "Send a reminder two days before each due date [reminder] also causes \"Some borrowers find the reminders annoying\", which the tree does not show."
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "entities": [
+    {
+      "id": "shorter",
+      "text": "Choose shorter books for the club",
+      "kind": "injection"
+    },
+    {
+      "id": "finish",
+      "text": "Members finish the book before the meeting",
+      "kind": "effect"
+    },
+    {
+      "id": "attend",
+      "text": "Members come to the meeting",
+      "kind": "precondition"
+    },
+    {
+      "id": "discussion",
+      "text": "The discussion covers the whole book",
+      "kind": "effect"
+    },
+    {
+      "id": "too-light",
+      "text": "Some members find the shorter books too light",
+      "kind": "effect",
+      "undesirable": true
+    }
+  ],
+  "arrows": [
+    {
+      "id": "shorter-to-finish",
+      "from": "shorter",
+      "to": "finish"
+    },
+    {
+      "id": "finish-to-discussion",
+      "from": "finish",
+      "to": "discussion"
+    },
+    {
+      "id": "attend-to-discussion",
+      "from": "attend",
+      "to": "discussion"
+    },
+    {
+      "id": "shorter-to-too-light",
+      "from": "shorter",
+      "to": "too-light"
+    }
+  ],
+  "groups": [
+    {
+      "id": "discussion-and",
+      "arrows": [
+        "finish-to-discussion",
+        "attend-to-discussion"
+      ]
+    }
+  ]
+}

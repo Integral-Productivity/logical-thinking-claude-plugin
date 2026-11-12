@@ -1,0 +1,15 @@
+{
+  "twin": "library-reminder",
+  "entries": [
+    {
+      "position": 1,
+      "category": "Cause insufficiency",
+      "matchSet": [
+        "on-time",
+        "know-date-to-on-time",
+        "know-date"
+      ],
+      "expected": "More books come back on time [on-time] needs another cause; \"Borrowers can reach the library before the due date\" is missing."
+    }
+  ]
+}

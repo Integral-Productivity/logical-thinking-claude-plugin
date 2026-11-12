@@ -1,0 +1,62 @@
+{
+  "entities": [
+    {
+      "id": "viable",
+      "text": "The seeds are viable",
+      "kind": "precondition"
+    },
+    {
+      "id": "moist",
+      "text": "The soil is moist",
+      "kind": "precondition"
+    },
+    {
+      "id": "warm-soil",
+      "text": "The soil is warm enough",
+      "kind": "precondition"
+    },
+    {
+      "id": "depth",
+      "text": "The seeds are planted at the right depth",
+      "kind": "precondition"
+    },
+    {
+      "id": "sprout",
+      "text": "The seeds sprout",
+      "kind": "effect"
+    }
+  ],
+  "arrows": [
+    {
+      "id": "viable-to-sprout",
+      "from": "viable",
+      "to": "sprout"
+    },
+    {
+      "id": "moist-to-sprout",
+      "from": "moist",
+      "to": "sprout"
+    },
+    {
+      "id": "warm-soil-to-sprout",
+      "from": "warm-soil",
+      "to": "sprout"
+    },
+    {
+      "id": "depth-to-sprout",
+      "from": "depth",
+      "to": "sprout"
+    }
+  ],
+  "groups": [
+    {
+      "id": "sprout-and",
+      "arrows": [
+        "viable-to-sprout",
+        "moist-to-sprout",
+        "warm-soil-to-sprout",
+        "depth-to-sprout"
+      ]
+    }
+  ]
+}

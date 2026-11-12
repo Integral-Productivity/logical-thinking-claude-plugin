@@ -1,0 +1,15 @@
+{
+  "twin": "book-club-twin",
+  "entries": [
+    {
+      "position": 1,
+      "category": "Cause insufficiency",
+      "matchSet": [
+        "finish",
+        "shorter-to-finish",
+        "shorter"
+      ],
+      "expected": "Members finish the book before the meeting [finish] needs another cause: members must set aside time to read."
+    }
+  ]
+}

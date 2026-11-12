@@ -1,0 +1,13 @@
+{
+  "twin": "bus-stop",
+  "entries": [
+    {
+      "position": 1,
+      "category": "Possible negative branch",
+      "matchSet": [
+        "second-stop"
+      ],
+      "expected": "Add a second stop on the school bus route [second-stop] also causes \"The route takes longer\", which the tree does not show."
+    }
+  ]
+}

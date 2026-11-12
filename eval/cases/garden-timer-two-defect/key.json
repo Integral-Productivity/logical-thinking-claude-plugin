@@ -1,0 +1,23 @@
+{
+  "twin": "garden-timer",
+  "entries": [
+    {
+      "position": 1,
+      "category": "Cause insufficiency",
+      "matchSet": [
+        "enough-water",
+        "watered-to-enough-water",
+        "watered"
+      ],
+      "expected": "Plants get enough water [enough-water] needs another cause; \"The water supply runs every morning\" is missing."
+    },
+    {
+      "position": 2,
+      "category": "Possible negative branch",
+      "matchSet": [
+        "timer"
+      ],
+      "expected": "Install a timer on the garden taps [timer] also causes \"The timer waters the beds on rainy days too\", which the tree does not show."
+    }
+  ]
+}

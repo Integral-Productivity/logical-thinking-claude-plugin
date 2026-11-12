@@ -1,0 +1,50 @@
+{
+  "entities": [
+    {
+      "id": "rota",
+      "text": "Post a cleaning rota in the shared kitchen",
+      "kind": "injection"
+    },
+    {
+      "id": "know-day",
+      "text": "Each person knows their cleaning day",
+      "kind": "effect"
+    },
+    {
+      "id": "home",
+      "text": "People are home on their cleaning day",
+      "kind": "precondition"
+    },
+    {
+      "id": "clean",
+      "text": "The kitchen is cleaned every day",
+      "kind": "effect"
+    }
+  ],
+  "arrows": [
+    {
+      "id": "rota-to-know-day",
+      "from": "rota",
+      "to": "know-day"
+    },
+    {
+      "id": "know-day-to-clean",
+      "from": "know-day",
+      "to": "clean"
+    },
+    {
+      "id": "home-to-clean",
+      "from": "home",
+      "to": "clean"
+    }
+  ],
+  "groups": [
+    {
+      "id": "clean-and",
+      "arrows": [
+        "know-day-to-clean",
+        "home-to-clean"
+      ]
+    }
+  ]
+}

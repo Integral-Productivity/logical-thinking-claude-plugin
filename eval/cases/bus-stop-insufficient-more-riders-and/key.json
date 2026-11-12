@@ -1,0 +1,15 @@
+{
+  "twin": "bus-stop",
+  "entries": [
+    {
+      "position": 1,
+      "category": "Cause insufficiency",
+      "matchSet": [
+        "more-riders",
+        "near-stop-to-more-riders",
+        "near-stop"
+      ],
+      "expected": "More pupils ride the bus [more-riders] needs another cause; \"The bus has free seats\" is missing."
+    }
+  ]
+}

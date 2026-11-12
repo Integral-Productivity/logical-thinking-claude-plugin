@@ -1,0 +1,13 @@
+{
+  "twin": "garden-timer",
+  "entries": [
+    {
+      "position": 1,
+      "category": "Possible negative branch",
+      "matchSet": [
+        "timer"
+      ],
+      "expected": "Install a timer on the garden taps [timer] also causes \"The timer waters the beds on rainy days too\", which the tree does not show."
+    }
+  ]
+}

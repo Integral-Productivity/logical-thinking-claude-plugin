@@ -1,0 +1,15 @@
+{
+  "twin": "late-deliveries",
+  "entries": [
+    {
+      "position": 1,
+      "category": "Cause insufficiency",
+      "matchSet": [
+        "on-time",
+        "enough-drivers-to-on-time",
+        "enough-drivers"
+      ],
+      "expected": "Deliveries arrive on time on peak days [on-time] needs another cause; \"Seasonal drivers learn the routes before peak weeks\" is missing."
+    }
+  ]
+}

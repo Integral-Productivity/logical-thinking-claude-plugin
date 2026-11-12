@@ -1,0 +1,54 @@
+{
+  "entities": [
+    {
+      "id": "second-stop",
+      "text": "Add a second stop on the school bus route",
+      "kind": "injection"
+    },
+    {
+      "id": "near-stop",
+      "text": "More pupils live near a stop",
+      "kind": "effect"
+    },
+    {
+      "id": "more-riders",
+      "text": "More pupils ride the bus",
+      "kind": "effect"
+    },
+    {
+      "id": "longer-route",
+      "text": "The route takes longer",
+      "kind": "effect",
+      "undesirable": true
+    },
+    {
+      "id": "longer-ride",
+      "text": "Pupils at the first stop spend longer on the bus",
+      "kind": "effect",
+      "undesirable": true
+    }
+  ],
+  "arrows": [
+    {
+      "id": "second-stop-to-near-stop",
+      "from": "second-stop",
+      "to": "near-stop"
+    },
+    {
+      "id": "near-stop-to-more-riders",
+      "from": "near-stop",
+      "to": "more-riders"
+    },
+    {
+      "id": "second-stop-to-longer-route",
+      "from": "second-stop",
+      "to": "longer-route"
+    },
+    {
+      "id": "longer-route-to-longer-ride",
+      "from": "longer-route",
+      "to": "longer-ride"
+    }
+  ],
+  "groups": []
+}

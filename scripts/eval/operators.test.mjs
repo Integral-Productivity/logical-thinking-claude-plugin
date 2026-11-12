@@ -132,3 +132,14 @@ test('every operator output on the committed seeds validates and carries a key',
   }
   assert.ok(count >= 12, `about two dozen mutants, got ${count}`);
 });
+
+test('a precondition is removed before a condition caused by an action', () => {
+  const tree = {
+    id: 'prefer',
+    entities: [e('act', 'action'), e('done'), e('pre', 'precondition'), e('goal')],
+    arrows: [a('act', 'done'), a('done', 'goal'), a('pre', 'goal')],
+    groups: [{ id: 'goal-and', arrows: ['done-to-goal', 'pre-to-goal'] }],
+  };
+  const { mutant } = removeCondition(tree, 'goal-and');
+  assert.deepEqual(mutant.arrows.map((x) => x.id), ['act-to-done', 'done-to-goal']);
+});

@@ -1,0 +1,25 @@
+{
+  "twin": "kitchen-rota",
+  "entries": [
+    {
+      "position": 1,
+      "category": "Cause insufficiency",
+      "matchSet": [
+        "clean",
+        "know-day-to-clean",
+        "home-to-clean",
+        "know-day",
+        "home"
+      ],
+      "expected": "The kitchen is cleaned every day [clean] needs another cause; \"Cleaning supplies are kept stocked\" is missing."
+    },
+    {
+      "position": 2,
+      "category": "Possible negative branch",
+      "matchSet": [
+        "rota"
+      ],
+      "expected": "Post a cleaning rota in the shared kitchen [rota] also causes \"People argue over swapped cleaning days\", which the tree does not show."
+    }
+  ]
+}

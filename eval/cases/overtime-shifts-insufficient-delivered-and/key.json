@@ -1,0 +1,17 @@
+{
+  "twin": "overtime-shifts",
+  "entries": [
+    {
+      "position": 1,
+      "category": "Cause insufficiency",
+      "matchSet": [
+        "delivered",
+        "more-hours-to-delivered",
+        "vans-to-delivered",
+        "more-hours",
+        "vans"
+      ],
+      "expected": "Peak-day orders are delivered on time [delivered] needs another cause; \"Orders arrive in peaks\" is missing."
+    }
+  ]
+}

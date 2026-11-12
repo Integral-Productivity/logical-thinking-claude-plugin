@@ -1,0 +1,68 @@
+{
+  "id": "bread-rises",
+  "title": "Long sufficient AND group: bread dough rises",
+  "checks": {
+    "negativeBranches": "2026-11-12 second-agent check: no undrawn foreseeable negative branch found",
+    "neutrality": "2026-11-12 manual check: invented everyday scenario, no real person, company, place, or figure"
+  },
+  "entities": [
+    {
+      "id": "yeast",
+      "text": "The dough has active yeast",
+      "kind": "precondition"
+    },
+    {
+      "id": "warm",
+      "text": "The dough is kept warm",
+      "kind": "precondition"
+    },
+    {
+      "id": "rest",
+      "text": "The dough rests for an hour",
+      "kind": "precondition"
+    },
+    {
+      "id": "sugar",
+      "text": "The dough has flour and water for the yeast to feed on",
+      "kind": "precondition"
+    },
+    {
+      "id": "rises",
+      "text": "The dough rises",
+      "kind": "effect"
+    }
+  ],
+  "arrows": [
+    {
+      "id": "yeast-to-rises",
+      "from": "yeast",
+      "to": "rises"
+    },
+    {
+      "id": "warm-to-rises",
+      "from": "warm",
+      "to": "rises"
+    },
+    {
+      "id": "rest-to-rises",
+      "from": "rest",
+      "to": "rises"
+    },
+    {
+      "id": "sugar-to-rises",
+      "from": "sugar",
+      "to": "rises"
+    }
+  ],
+  "groups": [
+    {
+      "id": "rises-and",
+      "arrows": [
+        "yeast-to-rises",
+        "warm-to-rises",
+        "rest-to-rises",
+        "sugar-to-rises"
+      ]
+    }
+  ]
+}

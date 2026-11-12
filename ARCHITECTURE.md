@@ -29,7 +29,7 @@ The two meet at one point: the **finding**. A finding from either repository nam
 | Core vocabulary | Names the tree types, the logical kinds (effect, action, precondition, obstacle, indicator), connectors (arrow, AND group, OR), the gate and cause AND NOT mitigation patterns, and the eight CLR categories | Planned | Plan R1-R5 |
 | CLR review | Restates any readable tree, or the logic in prose, as entities and arrows, then walks every entity and arrow through the CLR categories. Cause insufficiency comes first and deepest, side effects second | Planned | Plan R6-R16, ADR 0003 |
 | Guided chain | One tree-building skill per tree type. Runs the chain of questions forward, or in reverse to backfill logic behind an existing solution. Calls the CLR review by default | Later | STRATEGY.md tracks |
-| Evaluation set | Seeded-defect trees, clean trees, and seeded strategy documents, with answer keys | Planned | [QUALITY.md](QUALITY.md#evaluation-set-contract) |
+| Evaluation set | Seeded-defect trees, clean trees, and seeded strategy documents, with answer keys | Partial: seeded trees for two categories exist; strategy documents are planned | [QUALITY.md](QUALITY.md#evaluation-set-contract) |
 | Domain extension | Added domains map each class to a logical kind, so the review reads the kind, not the class name | Later | ADR 0001 (Proposed) |
 | Repository checks | node:test scripts that fail a pull request when an architectural rule breaks | One exists | [Fitness functions](#fitness-functions) |
 
@@ -103,7 +103,8 @@ FF7 and FF8 call a language model. They are costly and not fully repeatable, so 
 | `scripts/` | Repository checks (fitness functions) | Exists |
 | `skills/` | The CLR review and tree-building skills | Planned |
 | `vocabulary/` | Core vocabulary registry | Planned |
-| `eval/` | Evaluation set, answer keys, results ledger | Planned |
+| `eval/` | Evaluation set, answer keys, and run records ([eval/README.md](eval/README.md)) | Exists |
+| `scripts/eval/` | Evaluation-set build, scorer, and run command | Exists |
 
 ## Open questions
 

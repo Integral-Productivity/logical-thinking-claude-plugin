@@ -1,0 +1,13 @@
+{
+  "twin": "late-deliveries",
+  "entries": [
+    {
+      "position": 1,
+      "category": "Possible negative branch",
+      "matchSet": [
+        "hire"
+      ],
+      "expected": "Hire seasonal drivers for peak weeks [hire] also causes \"Payroll cost rises in peak weeks\", which the tree does not show."
+    }
+  ]
+}

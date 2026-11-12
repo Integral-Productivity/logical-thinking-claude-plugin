@@ -1,0 +1,231 @@
+{
+  "cases": [
+    {
+      "id": "bus-stop",
+      "kind": "clean seed",
+      "operators": [],
+      "twin": null
+    },
+    {
+      "id": "garden-timer",
+      "kind": "clean seed",
+      "operators": [],
+      "twin": null
+    },
+    {
+      "id": "kitchen-rota",
+      "kind": "clean seed",
+      "operators": [],
+      "twin": null
+    },
+    {
+      "id": "late-deliveries",
+      "kind": "clean seed",
+      "operators": [],
+      "twin": null
+    },
+    {
+      "id": "library-reminder",
+      "kind": "clean seed",
+      "operators": [],
+      "twin": null
+    },
+    {
+      "id": "overtime-shifts",
+      "kind": "clean seed",
+      "operators": [],
+      "twin": null
+    },
+    {
+      "id": "bread-rises",
+      "kind": "lookalike",
+      "operators": [],
+      "twin": null
+    },
+    {
+      "id": "night-cyclist",
+      "kind": "lookalike",
+      "operators": [],
+      "twin": null
+    },
+    {
+      "id": "path-puddles",
+      "kind": "lookalike",
+      "operators": [],
+      "twin": null
+    },
+    {
+      "id": "seeds-sprout",
+      "kind": "lookalike",
+      "operators": [],
+      "twin": null
+    },
+    {
+      "id": "bus-stop-insufficient-more-riders-and",
+      "kind": "mutant",
+      "operators": [
+        "insufficiency"
+      ],
+      "twin": "bus-stop"
+    },
+    {
+      "id": "bus-stop-no-longer-route",
+      "kind": "mutant",
+      "operators": [
+        "side effect"
+      ],
+      "twin": "bus-stop"
+    },
+    {
+      "id": "garden-timer-insufficient-enough-water-and",
+      "kind": "mutant",
+      "operators": [
+        "insufficiency"
+      ],
+      "twin": "garden-timer"
+    },
+    {
+      "id": "garden-timer-no-rain-watering",
+      "kind": "mutant",
+      "operators": [
+        "side effect"
+      ],
+      "twin": "garden-timer"
+    },
+    {
+      "id": "kitchen-rota-insufficient-clean-and",
+      "kind": "mutant",
+      "operators": [
+        "insufficiency"
+      ],
+      "twin": "kitchen-rota"
+    },
+    {
+      "id": "kitchen-rota-no-swaps",
+      "kind": "mutant",
+      "operators": [
+        "side effect"
+      ],
+      "twin": "kitchen-rota"
+    },
+    {
+      "id": "late-deliveries-insufficient-late-and",
+      "kind": "mutant",
+      "operators": [
+        "insufficiency"
+      ],
+      "twin": "late-deliveries"
+    },
+    {
+      "id": "late-deliveries-insufficient-on-time-and",
+      "kind": "mutant",
+      "operators": [
+        "insufficiency"
+      ],
+      "twin": "late-deliveries"
+    },
+    {
+      "id": "late-deliveries-no-payroll",
+      "kind": "mutant",
+      "operators": [
+        "side effect"
+      ],
+      "twin": "late-deliveries"
+    },
+    {
+      "id": "library-reminder-insufficient-on-time-and",
+      "kind": "mutant",
+      "operators": [
+        "insufficiency"
+      ],
+      "twin": "library-reminder"
+    },
+    {
+      "id": "library-reminder-no-annoyed",
+      "kind": "mutant",
+      "operators": [
+        "side effect"
+      ],
+      "twin": "library-reminder"
+    },
+    {
+      "id": "overtime-shifts-insufficient-delivered-and",
+      "kind": "mutant",
+      "operators": [
+        "insufficiency"
+      ],
+      "twin": "overtime-shifts"
+    },
+    {
+      "id": "overtime-shifts-no-fatigue",
+      "kind": "mutant",
+      "operators": [
+        "side effect"
+      ],
+      "twin": "overtime-shifts"
+    },
+    {
+      "id": "bus-stop-two-defect",
+      "kind": "two-defect",
+      "operators": [
+        "insufficiency",
+        "side effect"
+      ],
+      "twin": "bus-stop"
+    },
+    {
+      "id": "garden-timer-two-defect",
+      "kind": "two-defect",
+      "operators": [
+        "insufficiency",
+        "side effect"
+      ],
+      "twin": "garden-timer"
+    },
+    {
+      "id": "kitchen-rota-two-defect",
+      "kind": "two-defect",
+      "operators": [
+        "insufficiency",
+        "side effect"
+      ],
+      "twin": "kitchen-rota"
+    },
+    {
+      "id": "bake-sale-twin",
+      "kind": "clean twin",
+      "operators": [],
+      "twin": null
+    },
+    {
+      "id": "bake-sale",
+      "kind": "hand-written",
+      "operators": [],
+      "twin": "bake-sale-twin"
+    },
+    {
+      "id": "bike-lane-twin",
+      "kind": "clean twin",
+      "operators": [],
+      "twin": null
+    },
+    {
+      "id": "bike-lane",
+      "kind": "hand-written",
+      "operators": [],
+      "twin": "bike-lane-twin"
+    },
+    {
+      "id": "book-club-twin",
+      "kind": "clean twin",
+      "operators": [],
+      "twin": null
+    },
+    {
+      "id": "book-club",
+      "kind": "hand-written",
+      "operators": [],
+      "twin": "book-club-twin"
+    }
+  ]
+}

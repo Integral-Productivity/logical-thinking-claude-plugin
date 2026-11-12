@@ -1,0 +1,78 @@
+{
+  "id": "library-reminder",
+  "title": "Library due-date reminders",
+  "checks": {
+    "negativeBranches": "2026-11-12 second-agent check: no undrawn foreseeable negative branch found",
+    "neutrality": "2026-11-12 manual check: invented everyday scenario, no real person, company, place, or figure"
+  },
+  "entities": [
+    {
+      "id": "reminder",
+      "text": "Send a reminder two days before each due date",
+      "kind": "injection"
+    },
+    {
+      "id": "know-date",
+      "text": "Borrowers know the due date in advance",
+      "kind": "effect"
+    },
+    {
+      "id": "can-reach",
+      "text": "Borrowers can reach the library before the due date",
+      "kind": "precondition"
+    },
+    {
+      "id": "on-time",
+      "text": "More books come back on time",
+      "kind": "effect"
+    },
+    {
+      "id": "annoyed",
+      "text": "Some borrowers find the reminders annoying",
+      "kind": "effect",
+      "undesirable": true
+    },
+    {
+      "id": "opt-out",
+      "text": "Some borrowers turn off library messages",
+      "kind": "effect",
+      "undesirable": true
+    }
+  ],
+  "arrows": [
+    {
+      "id": "reminder-to-know-date",
+      "from": "reminder",
+      "to": "know-date"
+    },
+    {
+      "id": "know-date-to-on-time",
+      "from": "know-date",
+      "to": "on-time"
+    },
+    {
+      "id": "can-reach-to-on-time",
+      "from": "can-reach",
+      "to": "on-time"
+    },
+    {
+      "id": "reminder-to-annoyed",
+      "from": "reminder",
+      "to": "annoyed"
+    },
+    {
+      "id": "annoyed-to-opt-out",
+      "from": "annoyed",
+      "to": "opt-out"
+    }
+  ],
+  "groups": [
+    {
+      "id": "on-time-and",
+      "arrows": [
+        "know-date-to-on-time",
+        "can-reach-to-on-time"
+      ]
+    }
+  ]
+}

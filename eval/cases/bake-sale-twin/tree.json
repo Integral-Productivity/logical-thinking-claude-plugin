@@ -1,0 +1,61 @@
+{
+  "entities": [
+    {
+      "id": "bake",
+      "text": "Bake a batch of muffins the night before",
+      "kind": "action"
+    },
+    {
+      "id": "ready",
+      "text": "Muffins are ready on the morning of the sale",
+      "kind": "effect"
+    },
+    {
+      "id": "visitors",
+      "text": "People visit the stall during the sale",
+      "kind": "precondition"
+    },
+    {
+      "id": "sells",
+      "text": "The stall sells muffins",
+      "kind": "effect"
+    },
+    {
+      "id": "late-night",
+      "text": "The baker stays up late the night before",
+      "kind": "effect",
+      "undesirable": true
+    }
+  ],
+  "arrows": [
+    {
+      "id": "bake-to-ready",
+      "from": "bake",
+      "to": "ready"
+    },
+    {
+      "id": "ready-to-sells",
+      "from": "ready",
+      "to": "sells"
+    },
+    {
+      "id": "visitors-to-sells",
+      "from": "visitors",
+      "to": "sells"
+    },
+    {
+      "id": "bake-to-late-night",
+      "from": "bake",
+      "to": "late-night"
+    }
+  ],
+  "groups": [
+    {
+      "id": "sells-and",
+      "arrows": [
+        "ready-to-sells",
+        "visitors-to-sells"
+      ]
+    }
+  ]
+}

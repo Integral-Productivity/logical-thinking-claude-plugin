@@ -1,0 +1,15 @@
+{
+  "twin": "late-deliveries",
+  "entries": [
+    {
+      "position": 1,
+      "category": "Cause insufficiency",
+      "matchSet": [
+        "late",
+        "few-drivers-to-late",
+        "few-drivers"
+      ],
+      "expected": "Deliveries are late on peak days [late] needs another cause; \"Orders arrive in peaks\" is missing."
+    }
+  ]
+}

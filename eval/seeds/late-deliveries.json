@@ -1,0 +1,101 @@
+{
+  "id": "late-deliveries",
+  "title": "Late deliveries on peak days",
+  "checks": {
+    "negativeBranches": "2026-11-12 second-agent check: no undrawn foreseeable negative branch found",
+    "neutrality": "2026-11-12 manual check: invented everyday scenario, no real person, company, place, or figure"
+  },
+  "entities": [
+    {
+      "id": "few-drivers",
+      "text": "Too few drivers work on peak days",
+      "kind": "effect",
+      "undesirable": true
+    },
+    {
+      "id": "peaks",
+      "text": "Orders arrive in peaks",
+      "kind": "precondition"
+    },
+    {
+      "id": "late",
+      "text": "Deliveries are late on peak days",
+      "kind": "effect",
+      "undesirable": true
+    },
+    {
+      "id": "hire",
+      "text": "Hire seasonal drivers for peak weeks",
+      "kind": "injection"
+    },
+    {
+      "id": "enough-drivers",
+      "text": "Enough drivers work on peak days",
+      "kind": "effect"
+    },
+    {
+      "id": "know-routes",
+      "text": "Seasonal drivers learn the routes before peak weeks",
+      "kind": "precondition"
+    },
+    {
+      "id": "on-time",
+      "text": "Deliveries arrive on time on peak days",
+      "kind": "effect"
+    },
+    {
+      "id": "payroll",
+      "text": "Payroll cost rises in peak weeks",
+      "kind": "effect",
+      "undesirable": true
+    }
+  ],
+  "arrows": [
+    {
+      "id": "few-drivers-to-late",
+      "from": "few-drivers",
+      "to": "late"
+    },
+    {
+      "id": "peaks-to-late",
+      "from": "peaks",
+      "to": "late"
+    },
+    {
+      "id": "hire-to-enough-drivers",
+      "from": "hire",
+      "to": "enough-drivers"
+    },
+    {
+      "id": "enough-drivers-to-on-time",
+      "from": "enough-drivers",
+      "to": "on-time"
+    },
+    {
+      "id": "know-routes-to-on-time",
+      "from": "know-routes",
+      "to": "on-time"
+    },
+    {
+      "id": "hire-to-payroll",
+      "from": "hire",
+      "to": "payroll"
+    }
+  ],
+  "groups": [
+    {
+      "id": "late-and",
+      "arrows": [
+        "few-drivers-to-late",
+        "peaks-to-late"
+      ]
+    },
+    {
+      "id": "on-time-and",
+      "arrows": [
+        "enough-drivers-to-on-time",
+        "know-routes-to-on-time"
+      ]
+    }
+  ]
+}

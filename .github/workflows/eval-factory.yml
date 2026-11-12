@@ -1,0 +1,31 @@
+name: Evaluation set factory
+
+# Unit tests for the evaluation-set factory: tree format, mutation operators,
+# build drift, finding parser, scorer, run command, and ledger writer. These
+# tests call no model. Evaluation runs against a reviewer stay local.
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  eval-factory:
+    name: Evaluation set factory
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Setup Node
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: '22'
+
+      - name: Test the factory
+        run: node --test scripts/eval/*.test.mjs

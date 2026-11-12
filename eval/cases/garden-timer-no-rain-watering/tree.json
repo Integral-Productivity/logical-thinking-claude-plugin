@@ -1,0 +1,50 @@
+{
+  "entities": [
+    {
+      "id": "timer",
+      "text": "Install a timer on the garden taps",
+      "kind": "injection"
+    },
+    {
+      "id": "watered",
+      "text": "Beds are watered every morning",
+      "kind": "effect"
+    },
+    {
+      "id": "supply",
+      "text": "The water supply runs every morning",
+      "kind": "precondition"
+    },
+    {
+      "id": "enough-water",
+      "text": "Plants get enough water",
+      "kind": "effect"
+    }
+  ],
+  "arrows": [
+    {
+      "id": "timer-to-watered",
+      "from": "timer",
+      "to": "watered"
+    },
+    {
+      "id": "watered-to-enough-water",
+      "from": "watered",
+      "to": "enough-water"
+    },
+    {
+      "id": "supply-to-enough-water",
+      "from": "supply",
+      "to": "enough-water"
+    }
+  ],
+  "groups": [
+    {
+      "id": "enough-water-and",
+      "arrows": [
+        "watered-to-enough-water",
+        "supply-to-enough-water"
+      ]
+    }
+  ]
+}

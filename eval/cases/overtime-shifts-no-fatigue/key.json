@@ -1,0 +1,13 @@
+{
+  "twin": "overtime-shifts",
+  "entries": [
+    {
+      "position": 1,
+      "category": "Possible negative branch",
+      "matchSet": [
+        "overtime"
+      ],
+      "expected": "Add overtime shifts for drivers [overtime] also causes \"Driver fatigue rises\", which the tree does not show."
+    }
+  ]
+}

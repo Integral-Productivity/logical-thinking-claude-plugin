@@ -1,0 +1,46 @@
+{
+  "id": "night-cyclist",
+  "title": "Gate: a bike light at night",
+  "checks": {
+    "negativeBranches": "2026-11-12 second-agent check: no undrawn foreseeable negative branch found",
+    "neutrality": "2026-11-12 manual check: invented everyday scenario, no real person, company, place, or figure"
+  },
+  "entities": [
+    {
+      "id": "rides-at-night",
+      "text": "A cyclist rides after dark",
+      "kind": "effect"
+    },
+    {
+      "id": "light-on",
+      "text": "The bike light is switched on",
+      "kind": "precondition"
+    },
+    {
+      "id": "seen",
+      "text": "Drivers see the cyclist",
+      "kind": "effect"
+    }
+  ],
+  "arrows": [
+    {
+      "id": "rides-at-night-to-seen",
+      "from": "rides-at-night",
+      "to": "seen"
+    },
+    {
+      "id": "light-on-to-seen",
+      "from": "light-on",
+      "to": "seen"
+    }
+  ],
+  "groups": [
+    {
+      "id": "seen-and",
+      "arrows": [
+        "rides-at-night-to-seen",
+        "light-on-to-seen"
+      ]
+    }
+  ]
+}

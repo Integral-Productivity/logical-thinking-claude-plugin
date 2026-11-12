@@ -1,0 +1,15 @@
+{
+  "twin": "bake-sale-twin",
+  "entries": [
+    {
+      "position": 1,
+      "category": "Cause insufficiency",
+      "matchSet": [
+        "sells",
+        "ready-to-sells",
+        "ready"
+      ],
+      "expected": "The stall sells muffins [sells] needs another cause: people must visit the stall."
+    }
+  ]
+}

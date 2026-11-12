@@ -1,0 +1,48 @@
+{
+  "id": "path-puddles",
+  "title": "Cause AND NOT mitigation: puddles on a path",
+  "checks": {
+    "negativeBranches": "2026-11-12 second-agent check: no undrawn foreseeable negative branch found",
+    "neutrality": "2026-11-12 manual check: invented everyday scenario, no real person, company, place, or figure"
+  },
+  "entities": [
+    {
+      "id": "rain",
+      "text": "Heavy rain falls on the path",
+      "kind": "effect"
+    },
+    {
+      "id": "drain",
+      "text": "The path has a working drain",
+      "kind": "precondition"
+    },
+    {
+      "id": "puddles",
+      "text": "Puddles form on the path",
+      "kind": "effect",
+      "undesirable": true
+    }
+  ],
+  "arrows": [
+    {
+      "id": "rain-to-puddles",
+      "from": "rain",
+      "to": "puddles"
+    },
+    {
+      "id": "drain-to-puddles",
+      "from": "drain",
+      "to": "puddles",
+      "not": true
+    }
+  ],
+  "groups": [
+    {
+      "id": "puddles-and",
+      "arrows": [
+        "rain-to-puddles",
+        "drain-to-puddles"
+      ]
+    }
+  ]
+}

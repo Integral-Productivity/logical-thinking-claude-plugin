@@ -135,6 +135,12 @@ The evaluation set is the evidence for M1, M2, and MS1. It is built from neutral
 - Every case runs once with an agent author and no human, so ADR 0002 stays true.
 - Results are reported per operator and per defect position, never as one average.
 
+### Where the set lives and how to run it
+
+- The first set covers **Cause insufficiency** and **Possible negative branch**. Its trees, keys, and build are in [eval/](eval/README.md) and `scripts/eval/`.
+- Build the cases with `node scripts/eval/build.mjs`. CI runs `node --test scripts/eval/*.test.mjs`, which calls no model.
+- Run an evaluation locally with `node scripts/eval/run.mjs --model <name> --reviewer "<command>"`. Each run adds one ledger row per category, and MS1 needs three runs.
+
 ## Session record contract
 
 The plugin has no runtime that collects sessions. The session record is a local file the author can keep and choose to share. It is the source for M3, M4, and M5.

@@ -1,0 +1,12 @@
+{
+  "entries": [
+    {
+      "position": 1,
+      "category": "Possible negative branch",
+      "matchSet": [
+        "paint"
+      ],
+      "expected": "Paint a bike lane on the main road [paint] also removes parking spaces, which the tree does not show."
+    }
+  ]
+}

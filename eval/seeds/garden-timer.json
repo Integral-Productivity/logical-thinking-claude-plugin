@@ -1,0 +1,78 @@
+{
+  "id": "garden-timer",
+  "title": "Timer on the garden taps",
+  "checks": {
+    "negativeBranches": "2026-11-12 second-agent check: no undrawn foreseeable negative branch found",
+    "neutrality": "2026-11-12 manual check: invented everyday scenario, no real person, company, place, or figure"
+  },
+  "entities": [
+    {
+      "id": "timer",
+      "text": "Install a timer on the garden taps",
+      "kind": "injection"
+    },
+    {
+      "id": "watered",
+      "text": "Beds are watered every morning",
+      "kind": "effect"
+    },
+    {
+      "id": "supply",
+      "text": "The water supply runs every morning",
+      "kind": "precondition"
+    },
+    {
+      "id": "enough-water",
+      "text": "Plants get enough water",
+      "kind": "effect"
+    },
+    {
+      "id": "rain-watering",
+      "text": "The timer waters the beds on rainy days too",
+      "kind": "effect",
+      "undesirable": true
+    },
+    {
+      "id": "water-use",
+      "text": "Water use rises",
+      "kind": "effect",
+      "undesirable": true
+    }
+  ],
+  "arrows": [
+    {
+      "id": "timer-to-watered",
+      "from": "timer",
+      "to": "watered"
+    },
+    {
+      "id": "watered-to-enough-water",
+      "from": "watered",
+      "to": "enough-water"
+    },
+    {
+      "id": "supply-to-enough-water",
+      "from": "supply",
+      "to": "enough-water"
+    },
+    {
+      "id": "timer-to-rain-watering",
+      "from": "timer",
+      "to": "rain-watering"
+    },
+    {
+      "id": "rain-watering-to-water-use",
+      "from": "rain-watering",
+      "to": "water-use"
+    }
+  ],
+  "groups": [
+    {
+      "id": "enough-water-and",
+      "arrows": [
+        "watered-to-enough-water",
+        "supply-to-enough-water"
+      ]
+    }
+  ]
+}

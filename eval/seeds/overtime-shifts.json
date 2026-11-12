@@ -1,0 +1,89 @@
+{
+  "id": "overtime-shifts",
+  "title": "Overtime shifts for drivers",
+  "checks": {
+    "negativeBranches": "2026-11-12 second-agent check: no undrawn foreseeable negative branch found",
+    "neutrality": "2026-11-12 manual check: invented everyday scenario, no real person, company, place, or figure"
+  },
+  "entities": [
+    {
+      "id": "overtime",
+      "text": "Add overtime shifts for drivers",
+      "kind": "injection"
+    },
+    {
+      "id": "more-hours",
+      "text": "More driver hours are available on peak days",
+      "kind": "effect"
+    },
+    {
+      "id": "peaks",
+      "text": "Orders arrive in peaks",
+      "kind": "precondition"
+    },
+    {
+      "id": "vans",
+      "text": "Vans are free for the extra hours",
+      "kind": "precondition"
+    },
+    {
+      "id": "delivered",
+      "text": "Peak-day orders are delivered on time",
+      "kind": "effect"
+    },
+    {
+      "id": "fatigue",
+      "text": "Driver fatigue rises",
+      "kind": "effect",
+      "undesirable": true
+    },
+    {
+      "id": "accident-risk",
+      "text": "The risk of road accidents rises",
+      "kind": "effect",
+      "undesirable": true
+    }
+  ],
+  "arrows": [
+    {
+      "id": "overtime-to-more-hours",
+      "from": "overtime",
+      "to": "more-hours"
+    },
+    {
+      "id": "more-hours-to-delivered",
+      "from": "more-hours",
+      "to": "delivered"
+    },
+    {
+      "id": "peaks-to-delivered",
+      "from": "peaks",
+      "to": "delivered"
+    },
+    {
+      "id": "vans-to-delivered",
+      "from": "vans",
+      "to": "delivered"
+    },
+    {
+      "id": "overtime-to-fatigue",
+      "from": "overtime",
+      "to": "fatigue"
+    },
+    {
+      "id": "fatigue-to-accident-risk",
+      "from": "fatigue",
+      "to": "accident-risk"
+    }
+  ],
+  "groups": [
+    {
+      "id": "delivered-and",
+      "arrows": [
+        "more-hours-to-delivered",
+        "peaks-to-delivered",
+        "vans-to-delivered"
+      ]
+    }
+  ]
+}

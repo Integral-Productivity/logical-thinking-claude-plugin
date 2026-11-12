@@ -12,7 +12,7 @@ execution: code
 
 ## Goal Capsule
 
-- **Objective:** The project can show, with evidence, whether the CLR review catches every seeded insufficient cause and missing side effect (milestone MS1), and how many false findings it raises on clean trees (metric M2).
+- **Objective:** The project can show, with evidence, whether the CLR review catches every seeded insufficient cause and missing side effect (milestone MS1), and how many false findings in those two categories it raises on trees with no seeded defect of that kind (metric M2).
 - **Product authority:** This plan covers the first, smallest evaluation set: two mutation operators and the clean trees that M2 needs. The other eight operators, seeded strategy documents, and evaluation runs in CI are not active scope (see How This Work Fits Together).
 - **Open blockers:** None.
 
@@ -26,7 +26,7 @@ Build a small factory that makes the first evaluation set. Scripted operators tu
 
 ### Problem Frame
 
-STRATEGY.md and QUALITY.md promise evidence that the review catches what an expert would catch. Milestone MS1, metric M1 (seeded-defect catch rate), and metric M2 (false findings per clean tree) all depend on an evaluation set. No evaluation set exists, and the results ledger is empty. Until one exists, the claim "the review is accurate" in the strategy assurance case has no evidence, and the M1 floor of 100% cannot be checked.
+STRATEGY.md and QUALITY.md promise evidence that the review catches what an expert would catch. Milestone MS1, metric M1 (seeded-defect catch rate), and metric M2 (false findings on trees with no seeded defect) all depend on an evaluation set. No evaluation set exists, and the results ledger is empty. Until one exists, the claim "the review is accurate" in the strategy assurance case has no evidence, and the M1 floor of 100% cannot be checked.
 
 The first set must stay small. The two defect kinds that slip through most often (cause insufficiency and missing side effects) are the ones MS1 names. A larger catalog before the first baseline run would delay the first evidence and add cost with no decision that depends on it.
 
@@ -36,6 +36,8 @@ The first set must stay small. The two defect kinds that slip through most often
 - **A finding matches on CLR category and entity ID; wording is not scored.** (session-settled: user-directed — chosen over a model judge and over a person scoring by hand: the match is the same on every run and costs nothing.) Governs R10, R11.
 - **Runs are on demand and local; results go to the QUALITY.md ledger.** (session-settled: user-directed — chosen over scheduled CI runs and runs on each pull request: no model keys in CI, and runs are not yet cheap or stable enough to gate merges.) Governs R14, R15.
 - **M2 counts only the two MS1 categories.** Findings in the other six categories are logged and not scored in v1. (session-settled: user-directed — chosen over counting every finding and over a person labeling extra findings: the review checks all eight categories, but the set seeds only two.) Governs R13.
+- **A clean seed draws its foreseeable negative branches, and a second agent checks it.** Without this, M2 counts correct side-effect findings as false. (session-settled: user-approved — chosen over leaving side-effect cleanliness to the seed author: the recommendation was accepted in document review.) Governs R17.
+- **MS1 counts three runs per reviewer version; a miss in any run fails it.** (session-settled: user-approved — chosen over a single run: model output varies between runs.) Governs R18.
 - **Mutants come from scripted operators on structured seeds; the clean seed is the repaired twin.** (session-settled: user-directed — chosen over recipe-guided writing and over a script plus a paraphrase pass: smallest build, same output on every run.) Governs R1, R4, R5, R6.
 
 ### Requirements
@@ -50,17 +52,18 @@ The first set must stay small. The two defect kinds that slip through most often
 
 - R4. The insufficiency operator removes one condition from an AND group, so the remaining causes are not enough for the effect.
 - R5. The side-effect operator deletes a negative branch below an action or injection.
-- R6. Each mutant ships with an answer key (the CLR category, the entity ID, and a one-sentence expected finding for people to read) and names its clean seed as its repaired twin.
+- R6. Each mutant ships with an answer key (the CLR category, the match set of entity and arrow IDs, and a one-sentence expected finding for people to read) and names its clean seed as its repaired twin.
 - R7. The set includes a few two-defect trees that use both operators, so a miss after the first finding shows up.
 - R8. The set includes a few hand-written cases, so the review cannot pass by spotting tells in scripted mutants.
 
 **Clean set**
 
 - R9. The clean set holds the seeds and clean lookalikes: gates, cause AND NOT mitigation groups, and long but sufficient AND groups.
+- R17. Each action or injection in a clean seed draws its foreseeable negative branches, and a second agent checks the seed for undrawn branches before it enters the set.
 
 **Scoring**
 
-- R10. A finding matches a key entry when its CLR category and entity ID both match.
+- R10. A finding matches a key entry when its CLR category matches and the ID it names is in the entry's match set. For cause insufficiency, the match set is the effect, its incoming arrows, and its remaining causes; for a missing side effect, it is the action or injection.
 - R11. Missing-side-effect findings use one fixed label, so the scorer can match them like a CLR category.
 - R12. M1 is the share of seeded defects found, reported per operator and per defect position, never as one average.
 - R13. M2 counts findings in the two MS1 categories on trees with no seeded defect of that kind; findings in other categories are logged with the run.
@@ -69,11 +72,12 @@ The first set must stay small. The two defect kinds that slip through most often
 
 - R14. One local command runs the review on every case and scores it; no evaluation run is part of CI.
 - R15. Each run adds one row per scored category to the QUALITY.md results ledger, with the reviewer version (skill text, vocabulary version, evaluation-set version, and model).
-- R16. Every case runs with an agent author and no human present.
+- R16. The review runs on every case as an agent, with no human present.
+- R18. MS1 counts three runs per reviewer version, and a miss in any run fails MS1.
 
 ### Acceptance Examples
 
-- AE1. **Covers R4, R10.** **Given** a mutant whose AND group lost one condition, **when** the review reports cause insufficiency on the effect with the keyed entity ID, **then** the defect counts as found, whatever the sentence says.
+- AE1. **Covers R4, R10.** **Given** a mutant whose AND group lost one condition, **when** the review reports cause insufficiency on the effect, an incoming arrow, or a remaining cause, **then** the defect counts as found, whatever the sentence says.
 - AE2. **Covers R6, R13.** **Given** the repaired twin of that mutant, **when** the review reports cause insufficiency on the same effect, **then** the finding counts as false for M2.
 - AE3. **Covers R5, R11.** **Given** a mutant with a deleted negative branch, **when** the review reports the fixed side-effect label on the keyed action, **then** the defect counts as found.
 - AE4. **Covers R9, R13.** **Given** a clean lookalike with a gate, **when** the review reports a clarity finding on it, **then** the finding is logged and does not change M2.
@@ -81,9 +85,9 @@ The first set must stay small. The two defect kinds that slip through most often
 
 ### Success Criteria
 
-- MS1 is met when M1 is 100% for both operators on the first set (the floor in QUALITY.md). On a small set, one miss fails MS1; this is intended.
+- MS1 is met when, in every counted run (per R18), M1 is 100% for both operators and no repaired twin gets a finding of its key's category on its key's match set. This is the QUALITY.md rule that the review flags the mutant and stays silent on the twin. On a small set, one miss fails MS1; this is intended.
 - The first run gives an M2 baseline, so the M2 floor decision can be made from data.
-- A second run with no change to the reviewer gives the same scores, apart from model variation that the ledger records.
+- The three runs per reviewer version give the data to set a stability tolerance for FF8.
 
 ### Scope Boundaries
 
@@ -114,7 +118,7 @@ This plan covers the first evaluation set (track T4) for milestone MS1. The list
 
 - The review gives findings in the form of core-vocabulary plan R13 (category, entity with ID in brackets, one sentence). R11 needs that plan's R10 to use a fixed label for a possible negative branch.
 - ADR 0002 (agent author with no human) and ADR 0004 (vocabulary stability uses the evaluation floors) apply to this set.
-- QUALITY.md's evaluation-set contract names AE1-AE6 as the first seeds. Only AE1 and AE2 are defect seeds for the two operators; AE3 supplies a clean lookalike (cause AND NOT mitigation). AE4-AE6 test unreadable input, depth, and question mode, and stay out of v1. The contract text is corrected to match.
+- QUALITY.md's evaluation-set contract named the core-vocabulary plan's examples AE1-AE6 as the first seeds. Of those, only core-vocabulary AE1 and AE2 are defect seeds for the two operators, and core-vocabulary AE3 supplies a clean lookalike (cause AND NOT mitigation). Core-vocabulary AE4-AE6 test unreadable input, depth, and question mode, and stay out of v1. The contract text is corrected to match.
 
 ### Outstanding Questions
 
@@ -124,6 +128,7 @@ This plan covers the first evaluation set (track T4) for milestone MS1. The list
 - The number of seeds per operator and the number of two-defect and hand-written cases.
 - The wording of the fixed side-effect label, agreed with the core-vocabulary plan.
 - How the run records the reviewer version.
+- The score tolerance between runs beyond which the reviewer counts as unstable.
 
 ### Sources / Research
 

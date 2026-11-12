@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ideation: Testable strategy</title>
+<style>
+:root{--bg:#fbfaf7;--fg:#1f2328;--muted:#5b6370;--card:#ffffff;--line:#d8dce1;--chip:#eef1f5;--chipfg:#2b3440;--accent:#2457a6;--good:#e6f2ea;--goodfg:#1d5a32;--warn:#fbf1dd;--warnfg:#6b4a0c;}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#15181c;--fg:#e6e8eb;--muted:#a3abb6;--card:#1d2127;--line:#353b44;--chip:#2a3038;--chipfg:#d6dbe2;--accent:#8ab4f8;--good:#1e3326;--goodfg:#a8dcb7;--warn:#3a3020;--warnfg:#f0d49a;}}
+:root[data-theme="dark"]{--bg:#15181c;--fg:#e6e8eb;--muted:#a3abb6;--card:#1d2127;--line:#353b44;--chip:#2a3038;--chipfg:#d6dbe2;--accent:#8ab4f8;--good:#1e3326;--goodfg:#a8dcb7;--warn:#3a3020;--warnfg:#f0d49a;}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif}
+main{max-width:46rem;margin:0 auto;padding:2rem 16px 3rem}
+h1{font-size:1.9rem;line-height:1.25;margin:.2rem 0 .4rem}
+h2{font-size:1.35rem;margin:2.4rem 0 .8rem;padding-bottom:.3rem;border-bottom:1px solid var(--line)}
+h3{font-size:1.1rem;margin:0 0 .5rem}
+.eyebrow{text-transform:uppercase;letter-spacing:.06em;font-size:.75rem;color:var(--muted)}
+.lede{color:var(--muted)}
+a{color:var(--accent)}
+code{font-size:.9em;background:var(--chip);padding:.05em .3em;border-radius:4px}
+details.meta{margin:1rem 0;font-size:.9rem;color:var(--muted)}
+dl.kv{display:grid;grid-template-columns:max-content 1fr;gap:.25rem 1rem;margin:.5rem 0}
+dl.kv dt{font-weight:600}
+dl.kv dd{margin:0}
+article.idea{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:1.1rem 1.2rem;margin:1rem 0}
+.chips{display:flex;flex-wrap:wrap;gap:.4rem;margin:.2rem 0 .8rem}
+.chip{background:var(--chip);color:var(--chipfg);border-radius:999px;padding:.1rem .6rem;font-size:.8rem}
+.chip.good{background:var(--good);color:var(--goodfg)}
+.chip.warn{background:var(--warn);color:var(--warnfg)}
+article.idea dl{margin:0}
+article.idea dt{font-weight:600;margin-top:.6rem}
+article.idea dd{margin:.1rem 0 0}
+ul.jump{columns:1;padding-left:1.2rem}
+.scroll{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:.92rem}
+th,td{border-bottom:1px solid var(--line);padding:.45rem .5rem;text-align:left;vertical-align:top}
+th{font-weight:600}
+figure{margin:1rem 0}
+figcaption{font-size:.85rem;color:var(--muted)}
+svg text{fill:var(--fg);font:12px -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif}
+svg .box{fill:var(--card);stroke:var(--line)}
+svg .ev{fill:var(--good);stroke:var(--line)}
+svg .gap{fill:var(--warn);stroke:var(--line)}
+svg .ln{stroke:var(--muted);stroke-width:1.2;fill:none}
+footer.composition-signal{margin-top:3rem;font-size:.85rem;color:var(--muted);border-top:1px solid var(--line);padding-top:1rem}
+</style>
+</head>
+<body>
+<main>
+<header>
+<div class="eyebrow">Ideation</div>
+<h1>Ideation: Testable strategy</h1>
+<p class="lede"><time datetime="2026-11-12">2026-11-12</time> · Focus: how to make STRATEGY.md testable, including architecture fitness functions that show the project is approaching its desired outcomes. ARCHITECTURE.md and QUALITY.md follow.</p>
+</header>
+<details class="meta"><summary>Document metadata</summary>
+<dl class="kv"><dt>topic</dt><dd>testable-strategy</dd><dt>mode</dt><dd>repo-grounded</dd></dl>
+</details>
+
+<section id="grounding-context">
+<h2>Grounding Context</h2>
+<h3>Codebase Context</h3>
+<ul>
+<li>The repo is early. It holds STRATEGY.md, ADRs 0001 to 0003, one requirements plan (core vocabulary and CLR review), and an empty plugin manifest. No skill, review, evaluation set, or fixture exists yet.</li>
+<li>The four key metrics (STRATEGY.md lines 35-38) have definitions but no targets, owners, or data sources. "Findings acted on" and "Chain completion" have no source at all. The three milestones are "Not yet dated".</li>
+<li>The plan defers the first test set and the false-finding threshold, because "no baseline exists today" (plan lines 93 and 123). Its acceptance examples AE1-AE6 (lines 83-88) are neutral Given/When/Then cases.</li>
+<li>CI runs only dependency review plus one fitness-function precedent: <code>scripts/check-upload-limits.test.mjs</code> (node:test, 11 tests). Claude branches auto-merge on green CI, so any new required check gates merges.</li>
+<li>ADR 0001 already uses competency questions as acceptance tests (CQ-01 to CQ-10). ADR 0003 records the CLR review as on by default.</li>
+</ul>
+<h3>Strategy lines the ideas must respect</h3>
+<ul>
+<li>Fixtures and examples are neutral: no real person, company, or private business figure.</li>
+<li>The plugin judges logic only; the tool repo owns structure checks and file formats.</li>
+<li>Resist a change that makes the CLR review optional by default, or starts a domain before the core vocabulary is stable.</li>
+</ul>
+<h3>External context</h3>
+<ul>
+<li>Strategy falsifiability practice: a leading indicator per guiding policy, triggers with thresholds and time windows, owners, review dates, and a decision register.</li>
+<li>AI code-review evaluation: report catch rate per category, not one average; replay a regression corpus on each reviewer change; version prompt, model, and examples as one artifact. Benchmarks show the harness and prompt move scores as much as the model.</li>
+<li>Assurance cases (GSN): a claim tree whose leaves carry evidence; tools flag undeveloped claims. Automated checks cover logic doubt; judgement covers epistemic doubt.</li>
+<li>Analogies used: mutation testing, clinical pre-registration of endpoints, the drug-development Target Product Profile, radiology "satisfaction of search", and immune negative selection.</li>
+</ul>
+</section>
+
+<section id="topic-axes">
+<h2>Topic Axes</h2>
+<ol>
+<li>Metric definitions: targets, data sources, owners, and dates for the key metrics.</li>
+<li>Evaluation set: the fixture corpus and how it is built, versioned, and kept neutral.</li>
+<li>Guardrail checks in CI: fitness functions for the Boundaries and "Resist a change when" lines.</li>
+<li>The strategy's own logic: traceability from Purpose to Milestones, and the strategy as a claim tree.</li>
+<li>Learning loop and governance: how results feed back, the decision register, and the split into ARCHITECTURE.md and QUALITY.md.</li>
+</ol>
+</section>
+
+<section id="ranked-ideas">
+<h2>Ranked Ideas</h2>
+<ul class="jump">
+<li><a href="#idea-1">1. Strategy assurance case</a></li>
+<li><a href="#idea-2">2. Pre-registered metric charter: floor now, target after baseline</a></li>
+<li><a href="#idea-3">3. Evaluation-set factory from neutral seeds</a></li>
+<li><a href="#idea-4">4. Guardrail fitness-function suite</a></li>
+<li><a href="#idea-5">5. A delay counter-metric for "without delay"</a></li>
+<li><a href="#idea-6">6. Core vocabulary freeze with a stability clock</a></li>
+<li><a href="#idea-7">7. Reviewer version ledger and a split "answered"</a></li>
+</ul>
+
+<article class="idea" id="idea-1">
+<h3>1. Strategy assurance case</h3>
+<div class="chips"><span class="chip">Axis 4: the strategy's own logic</span><span class="chip good">Confidence 80%</span><span class="chip">Complexity Low</span></div>
+<dl>
+<dt>Description</dt>
+<dd>Give every line in STRATEGY.md a stable ID (for example P1 for Purpose, B3 for a Boundary, T2 for a Track, M1 for a Metric, MS1 for a Milestone). Write the strategy as a claim tree: Purpose is the problem, Positioning is the injection, each track's "Why it serves the approach" line is an arrow, and metrics and milestones are the evidence leaves. A small CI script then flags undeveloped claims: a track with no metric, a metric with no data source or no track, a boundary with no check. Run the plugin's own CLR review on the same tree by hand now, and with the skill later. Each finding becomes a strategy test to resolve. This tree is the natural core of QUALITY.md.</dd>
+<dt>Basis</dt>
+<dd>direct: STRATEGY.md line 44 says the review "maps the logic out of prose, such as a business or product strategy document, into a tree before it judges", and line 62 names "seeded strategy documents" as part of the evaluation set. direct: the orphans are real today. The Tool link track has no metric, and Domain extension appears only in milestone 3. external: GSN assurance cases flag undeveloped claims automatically.</dd>
+<dt>Rationale</dt>
+<dd>It turns "make the strategy testable" into a job the plugin already claims to do, and it gives the first concrete gap list. A logic tool whose strategy fails its own review is a credibility risk; finding the gaps first is the best demonstration of the positioning. It also states the surrogate claim the strategy relies on: eval-set scores lead to findings acted on, which lead to sounder decisions.</dd>
+<dd>
+<figure>
+<div class="scroll">
+<svg viewBox="0 0 640 230" width="640" height="230" role="img" aria-label="Strategy as a claim tree: Purpose, Positioning, Tracks, then Metrics and Milestones as evidence leaves, with undeveloped claims marked">
+<rect class="box" x="250" y="10" width="140" height="34" rx="6"/><text x="320" y="31" text-anchor="middle">Purpose (problem)</text>
+<rect class="box" x="235" y="66" width="170" height="34" rx="6"/><text x="320" y="87" text-anchor="middle">Positioning (injection)</text>
+<path class="ln" d="M320 44 V66"/>
+<rect class="box" x="20" y="124" width="110" height="34" rx="6"/><text x="75" y="145" text-anchor="middle">T1 Review</text>
+<rect class="box" x="145" y="124" width="110" height="34" rx="6"/><text x="200" y="145" text-anchor="middle">T2 Chain</text>
+<rect class="box" x="270" y="124" width="110" height="34" rx="6"/><text x="325" y="145" text-anchor="middle">T3 Tool link</text>
+<rect class="box" x="395" y="124" width="110" height="34" rx="6"/><text x="450" y="145" text-anchor="middle">T4 Eval set</text>
+<rect class="box" x="520" y="124" width="110" height="34" rx="6"/><text x="575" y="145" text-anchor="middle">T5 Domains</text>
+<path class="ln" d="M320 100 L75 124 M320 100 L200 124 M320 100 L325 124 M320 100 L450 124 M320 100 L575 124"/>
+<rect class="ev" x="20" y="186" width="110" height="34" rx="17"/><text x="75" y="207" text-anchor="middle">M1, M2</text>
+<rect class="ev" x="145" y="186" width="110" height="34" rx="17"/><text x="200" y="207" text-anchor="middle">M3, M4</text>
+<rect class="gap" x="270" y="186" width="110" height="34" rx="17"/><text x="325" y="207" text-anchor="middle">no metric</text>
+<rect class="ev" x="395" y="186" width="110" height="34" rx="17"/><text x="450" y="207" text-anchor="middle">M1, M2</text>
+<rect class="gap" x="520" y="186" width="110" height="34" rx="17"/><text x="575" y="207" text-anchor="middle">milestone only</text>
+<path class="ln" d="M75 158 V186 M200 158 V186 M325 158 V186 M450 158 V186 M575 158 V186"/>
+</svg>
+</div>
+<figcaption>Illustrative. Rounded leaves are evidence; tinted leaves are undeveloped claims the CI script would flag (Tool link has no metric; Domain extension has only a milestone).</figcaption>
+</figure>
+</dd>
+<dt>Downsides</dt>
+<dd>The tree is a hand-built mapping until the prose-mapping skill exists, so the first review is manual. Stable IDs add a small editing cost to STRATEGY.md. Keep it a claim tree with real evidence links, not a "cartoon argument" with loose traceability.</dd>
+<dt>Confidence</dt><dd>80%</dd>
+<dt>Complexity</dt><dd>Low</dd>
+</dl>
+</article>
+
+<article class="idea" id="idea-2">
+<h3>2. Pre-registered metric charter: floor now, target after baseline</h3>
+<div class="chips"><span class="chip">Axis 1: metric definitions</span><span class="chip good">Confidence 85%</span><span class="chip">Complexity Low</span></div>
+<dl>
+<dt>Description</dt>
+<dd>Before the first evaluation run, commit a charter for each key metric: data source, denominator, owner, a binding <em>floor</em> set from first principles now (for example "no seeded insufficient cause missed in the first set"), a <em>target</em> left open until the first baseline run, and a decide-by date. Changes to a floor or target go through the decision register (an ADR), never an in-place edit. For the two session metrics, the source is a record contract, not telemetry: each finding carries a stable ID and a final disposition the author sets, and chain completion is read from the existing "which links a source does not answer" report. A tool then reports "floor met, target pending" instead of "no data".</dd>
+<dt>Basis</dt>
+<dd>direct: STRATEGY.md lines 35-38 give four metrics with no targets, and lines 74-76 leave all milestones "Not yet dated". direct: plan line 93, "The planner sets the threshold, because no baseline exists today." direct: STRATEGY.md line 50 already plans the unanswered-links report. external: clinical pre-registration of endpoints; the Target Product Profile's "minimum acceptable" and "ideal" tiers.</dd>
+<dt>Rationale</dt>
+<dd>It breaks the loop where milestones stay undated because thresholds do not exist, and thresholds do not exist because there is no baseline. A floor needs only an argument about what is unacceptable, so it can exist today. Fixing it before results arrive stops the goalposts from moving.</dd>
+<dt>Downsides</dt>
+<dd>A plugin has no runtime that collects sessions, so the session metrics stay local and opt-in; aggregate numbers depend on users sharing their records. Early floors may be wrong and need a recorded revision.</dd>
+<dt>Confidence</dt><dd>85%</dd>
+<dt>Complexity</dt><dd>Low</dd>
+</dl>
+</article>
+
+<article class="idea" id="idea-3">
+<h3>3. Evaluation-set factory from neutral seeds</h3>
+<div class="chips"><span class="chip">Axis 2: evaluation set</span><span class="chip good">Confidence 80%</span><span class="chip">Complexity Medium</span></div>
+<dl>
+<dt>Description</dt>
+<dd>Build the evaluation set from a few neutral clean seed trees and a catalog of mutation operators, one per CLR category (remove a conjunct from an AND group, delete a negative branch, drop the AND NOT mitigation, make a cause restate its effect). Every mutant ships with its answer key and its repaired twin, so the review must flag the mutant and stay silent on the twin. Add two kinds of hard cases: valid constructs that look like defects (gates, AND NOT groups, long but sufficient AND groups) as the clean set, and trees with two or three defects of mixed categories, so a miss after the first finding shows up. Start with AE1-AE6 from the plan as the first seeds. Report catch rate per operator and per defect position, not one average.</dd>
+<dt>Basis</dt>
+<dd>direct: plan line 83 (AE1, "Late deliveries" with one cause "Too few drivers") and lines 84-85 (AE2, AE3) already describe insufficiency, missing negative branch, and AND NOT cases. direct: plan lines 66-68 (R9-R11) order insufficiency first and deepest, then side effects, then the gate and AND NOT patterns. external: mutation testing (mutants, mutation score); per-category catch rate in AI code-review evaluation; radiology's "satisfaction of search", where a second abnormality is missed after the first is found.</dd>
+<dt>Rationale</dt>
+<dd>Three of the four metrics depend on an evaluation set that has no first member. Operators make the set grow by running, not by hand-curation, which is where benchmark effort usually goes. Neutrality holds because every mutant comes from a neutral seed. Lookalike clean constructs keep the false-finding threshold honest on the trees where precision is hardest.</dd>
+<dt>Downsides</dt>
+<dd>Generated mutants can carry stylistic tells the review learns to spot, so some hand-written cases are still needed. AE1-AE6 trees are tiny, so they give a smoke baseline, not a real one. AE4 needs an unreadable-image fixture.</dd>
+<dt>Confidence</dt><dd>80%</dd>
+<dt>Complexity</dt><dd>Medium</dd>
+</dl>
+</article>
+
+<article class="idea" id="idea-4">
+<h3>4. Guardrail fitness-function suite</h3>
+<div class="chips"><span class="chip">Axis 3: guardrail checks in CI</span><span class="chip good">Confidence 75%</span><span class="chip">Complexity Low</span></div>
+<dl>
+<dt>Description</dt>
+<dd>Extend the upload-limits precedent into a small node:test suite that turns the strategy's guardrails into failing checks. (a) Every tree-building skill runs the CLR review by default; no setting makes it optional by default. (b) Fixtures pass a neutrality lint: a pattern scan for currency figures, emails, and capitalized proper nouns outside an allowlist of invented names, with flagged items sent to a human review step. (c) No finding category in the plugin is a structure category the tool repo owns (loops, IDs, unconnected entities). (d) Plugin findings validate against the same finding schema as the tool repo's findings, so the Tool link track's "read alike" promise is checked.</dd>
+<dt>Basis</dt>
+<dd>direct: <code>scripts/check-upload-limits.test.mjs</code> already builds temp fixtures and fails a PR (11 tests). direct: STRATEGY.md line 31 (resist making the review optional by default), line 27 (neutral fixtures), line 24 (logic only). direct: ADR 0003 records the review as on by default. direct: plan line 116 assumes findings from both repos read alike.</dd>
+<dt>Rationale</dt>
+<dd>Claude branches auto-merge on green CI, so a guardrail written only in prose can be removed silently. The pattern already exists, so each check is a small increment, and the "Resist a change when" line becomes a refusal the repo performs.</dd>
+<dt>Downsides</dt>
+<dd>A name lint cannot list every real name, so it is a heuristic plus review, not a guarantee. Check (a) can only run once skills exist. Check (d) needs agreement with the tool repo on a shared finding format.</dd>
+<dt>Confidence</dt><dd>75%</dd>
+<dt>Complexity</dt><dd>Low</dd>
+</dl>
+</article>
+
+<article class="idea" id="idea-5">
+<h3>5. A delay counter-metric for "without delay"</h3>
+<div class="chips"><span class="chip">Axis 1: metric definitions</span><span class="chip warn">Confidence 70%</span><span class="chip">Complexity Low</span></div>
+<dl>
+<dt>Description</dt>
+<dd>The brand promises "Deep deliberation without delay", but every key metric measures depth or completion. Add one paired counter-metric, for example findings shown before the first actionable one, or review turns per completed chain, with a band. Depth and delay then form a polarity with a limit on each side, so a higher catch rate cannot be bought by flooding the author.</dd>
+<dt>Basis</dt>
+<dd>direct: STRATEGY.md line 80, "Deep deliberation without delay", and line 82, "without analysis paralysis". reasoned: lines 35-38 hold four metrics and none measures time, turns, or volume of findings. A review tuned only for catch rate is rewarded for more findings, which the brand promises against.</dd>
+<dt>Rationale</dt>
+<dd>This is the most likely way the strategy fails while every listed metric looks green. It also matches ADR 0003's stated main risk: practitioners ignore a review that raises too much.</dd>
+<dt>Downsides</dt>
+<dd>A delay proxy is easy to game and depends on the depth-on-request design. It adds a fifth metric to a list the template advises keeping short.</dd>
+<dt>Confidence</dt><dd>70%</dd>
+<dt>Complexity</dt><dd>Low</dd>
+</dl>
+</article>
+
+<article class="idea" id="idea-6">
+<h3>6. Core vocabulary freeze with a stability clock</h3>
+<div class="chips"><span class="chip">Axis 3: guardrail checks in CI</span><span class="chip warn">Confidence 65%</span><span class="chip">Complexity Low</span></div>
+<dl>
+<dt>Description</dt>
+<dd>Define "core vocabulary is stable" as a check. Keep the core terms (tree types, logical kinds, connector meanings, the eight CLR categories) in a registry file with a content hash. CI allows additions and rejects a rename or redefinition. "Stable" means no breaking change across a set number of releases while the evaluation set stays at or above its floors. That state opens the domain track, and later a domain conformance kit proves milestone 3: the core evaluation set passes unchanged with the domain loaded.</dd>
+<dt>Basis</dt>
+<dd>direct: STRATEGY.md line 26, "Domains extend the core vocabulary; they never change it", and line 31, resist starting a domain "before the core vocabulary is stable". direct: line 76, milestone 3 "without a change to the core vocabulary". external: the Unicode stability policy, where encoded names never change but new characters can be added.</dd>
+<dt>Rationale</dt>
+<dd>"Stable" has no definition, so the resist rule cannot be tested today. This gives the domain track an objective start and reuses the same hash to prove milestone 3.</dd>
+<dt>Downsides</dt>
+<dd>No vocabulary file exists yet, so this can only be specified now. The plan defers domains, so the conformance kit is later work. The team must agree on the release count, which is a strategy decision.</dd>
+<dt>Confidence</dt><dd>65%</dd>
+<dt>Complexity</dt><dd>Low</dd>
+</dl>
+</article>
+
+<article class="idea" id="idea-7">
+<h3>7. Reviewer version ledger and a split "answered"</h3>
+<div class="chips"><span class="chip">Axis 5: learning loop and governance</span><span class="chip warn">Confidence 60%</span><span class="chip">Complexity Medium</span></div>
+<dl>
+<dt>Description</dt>
+<dd>Treat the review procedure (skill prompt, vocabulary, evaluation-set version, model) as one versioned artifact. Append each evaluation run to a results ledger, by category and by version, so a release that lowers one category shows up even when the average rises. In the session record, split "answered" into "rebutted with a reason" and "answered without change". On a set cadence, decide for each rebuttal whether the review or the author was wrong, rewrite the pattern as a neutral fixture, and add it to the evaluation set. Start with the ledger; add a merge gate later, once runs are cheap and repeatable.</dd>
+<dt>Basis</dt>
+<dd>direct: STRATEGY.md line 37 counts "accepts, repairs, or answers" as acted on, so a rebuttal counts the same as a fix. direct: ADR 0001 lines 77-79 leave fail-versus-warn questions open, which a decision register would own. external: AI code-review drift practice (version the reviewer as one artifact, log disagreements by version); aviation near-miss reporting.</dd>
+<dt>Rationale</dt>
+<dd>Without versioning, a change in catch rate cannot be attributed to a cause, which is the very CLR problem the plugin teaches. Rebuttals are the only field evidence of false findings, and this loop lets the evaluation set grow toward real mistakes while staying neutral. It gives QUALITY.md a concrete job as the results and decisions ledger.</dd>
+<dt>Downsides</dt>
+<dd>Evaluation runs on a language model are costly and not fully repeatable, and need secrets in CI, so a merge gate is premature. The rebuttal loop needs field data and a person to decide each case.</dd>
+<dt>Confidence</dt><dd>60%</dd>
+<dt>Complexity</dt><dd>Medium</dd>
+</dl>
+</article>
+</section>
+
+<section id="rejection-summary">
+<h2>Rejection Summary</h2>
+<div class="scroll">
+<table>
+<thead><tr><th>#</th><th>Idea</th><th>Reason rejected</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>AE1-AE6 as a standalone regression corpus</td><td>Duplicates a stronger idea; folded into idea 3 as its first seeds.</td></tr>
+<tr><td>2</td><td>Content-free event schema and local telemetry log</td><td>Weak on its own: a plugin has no runtime to collect sessions. Kept only as the record contract in idea 2.</td></tr>
+<tr><td>3</td><td>Define "clean" by convergence of the review's own repairs</td><td>Basis refuted: it is circular and drives measured false findings to zero by construction.</td></tr>
+<tr><td>4</td><td>Synthetic agent practitioners to produce session metrics</td><td>Premature: the chain does not exist yet, and simulated completion is a proxy of unknown validity.</td></tr>
+<tr><td>5</td><td>A Given/When/Then example for every strategy sentence</td><td>Too expensive for its value: brand and positioning lines do not fit the form. The useful part is in idea 1.</td></tr>
+<tr><td>6</td><td>Public neutral benchmark with a private holdout</td><td>Interesting but premature with no evaluation set; better as a later brainstorm on openness.</td></tr>
+<tr><td>7</td><td>Blind expert agreement rate by version</td><td>Weak now: it needs scarce experts, the constraint the strategy removes. Keep as a small periodic sample later.</td></tr>
+<tr><td>8</td><td>Trap-street canaries against example-to-fixture leakage</td><td>Low priority now; revisit when skill examples and fixtures both exist.</td></tr>
+<tr><td>9</td><td>Item-response calibration and retirement of eval items</td><td>Premature: needs many items and many runs.</td></tr>
+<tr><td>10</td><td>Capture-recapture estimate of field catch rate</td><td>Basis refuted: the two passes come from the same model, so they are not independent.</td></tr>
+<tr><td>11</td><td>Unanswered chain links as an offline leading indicator</td><td>Weak: an untested proxy for abandonment. The report itself feeds idea 2.</td></tr>
+<tr><td>12</td><td>Surrogate-endpoint validation as its own idea</td><td>Duplicates a stronger idea; folded into idea 1 as a stated claim. Needs field data to test.</td></tr>
+<tr><td>13</td><td>Regression gate on auto-merge for every reviewer change</td><td>Too expensive now (cost, nondeterminism, secrets); kept as the later step of idea 7.</td></tr>
+<tr><td>14</td><td>Domain conformance kit as its own idea</td><td>Premature (domains are deferred); folded into idea 6 as its later step.</td></tr>
+<tr><td>15</td><td>Shared finding-schema contract test as its own idea</td><td>Duplicates a stronger idea; folded into idea 4 as check (d).</td></tr>
+<tr><td>16</td><td>Field-to-fixture loop with capture-recapture and expert sampling</td><td>Weak synthesis: two of its parts are refuted or premature. The rebuttal part survives in idea 7.</td></tr>
+</tbody>
+</table>
+</div>
+<p>All five axes have at least one survivor.</p>
+</section>
+
+<footer class="composition-signal">Composed 2026-11-12T04:00Z by ce-ideate from the request "make the strategy testable, including fitness functions", grounded on <code>STRATEGY.md</code>.</footer>
+</main>
+</body>
+</html>

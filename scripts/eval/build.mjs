@@ -6,15 +6,19 @@
 // key.json (the repaired twin and the seeded defects, in position order).
 // manifest.json lists every case with its kind, operators, and twin.
 
-import { mkdirSync, readdirSync, rmSync, writeFileSync } from 'node:fs';
+import { mkdirSync, readdirSync, realpathSync, rmSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
+import { pathToFileURL } from 'node:url';
 import { loadTree, publicTree, validateTree } from './tree.mjs';
 import { branchTargets, insufficiencyTargets, removeBranch, removeCondition } from './operators.mjs';
+import { CATEGORIES, OPERATOR } from './categories.mjs';
 
-export const CLEAN_KINDS = ['clean seed', 'lookalike', 'clean twin'];
+const INSUFFICIENCY = OPERATOR[CATEGORIES.insufficiency];
+const SIDE_EFFECT = OPERATOR[CATEGORIES.sideEffect];
+
 const TWO_DEFECT_TREES = 3;
 
-const json = (value) => `${JSON.stringify(value, null, 2)}\n`;
+export const json = (value) => `${JSON.stringify(value, null, 2)}\n`;
 
 function readDir(dir) {
   return readdirSync(dir).filter((f) => !f.startsWith('.')).sort();
@@ -42,11 +46,11 @@ export function buildSet(root) {
   for (const seed of seeds) {
     for (const group of insufficiencyTargets(seed)) {
       const { mutant, entry } = removeCondition(seed, group);
-      add(`${seed.id}-insufficient-${group}`, 'mutant', mutant, keyed(seed.id, [entry]), ['insufficiency']);
+      add(`${seed.id}-insufficient-${group}`, 'mutant', mutant, keyed(seed.id, [entry]), [INSUFFICIENCY]);
     }
     for (const branch of branchTargets(seed)) {
       const { mutant, entry } = removeBranch(seed, branch);
-      add(`${seed.id}-no-${branch}`, 'mutant', mutant, keyed(seed.id, [entry]), ['side effect']);
+      add(`${seed.id}-no-${branch}`, 'mutant', mutant, keyed(seed.id, [entry]), [SIDE_EFFECT]);
     }
   }
 
@@ -58,10 +62,11 @@ export function buildSet(root) {
     const [group] = insufficiencyTargets(seed);
     if (!group) continue;
     const first = removeCondition(seed, group);
-    const [branch] = branchTargets(first.mutant).filter((b) => branchTargets(seed).includes(b));
+    const seedBranches = new Set(branchTargets(seed));
+    const [branch] = branchTargets(first.mutant).filter((b) => seedBranches.has(b));
     if (!branch) continue;
     const second = removeBranch(first.mutant, branch);
-    add(`${seed.id}-two-defect`, 'two-defect', second.mutant, keyed(seed.id, [first.entry, second.entry]), ['insufficiency', 'side effect']);
+    add(`${seed.id}-two-defect`, 'two-defect', second.mutant, keyed(seed.id, [first.entry, second.entry]), [INSUFFICIENCY, SIDE_EFFECT]);
     twoDefect += 1;
   }
 
@@ -94,7 +99,7 @@ export function writeSet(root) {
   return files.size;
 }
 
-if (import.meta.url === `file://${process.argv[1]}`) {
+if (process.argv[1] && import.meta.url === pathToFileURL(realpathSync(process.argv[1])).href) {
   const count = writeSet(join(import.meta.dirname, '..', '..'));
   console.log(`wrote ${count} files to eval/cases/`);
 }

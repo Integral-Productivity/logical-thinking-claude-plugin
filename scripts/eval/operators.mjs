@@ -97,7 +97,7 @@ function branchArrow(tree, rootId) {
 // Undesirable effects drawn directly below an action or injection, in arrow
 // order. The action must keep another effect, so the mutant shows no dead end.
 export function branchTargets(tree) {
-  return tree.arrows.map((x) => x.to).filter((id, i, all) => all.indexOf(id) === i && branchArrow(tree, id));
+  return [...new Set(tree.arrows.map((x) => x.to))].filter((id) => branchArrow(tree, id));
 }
 
 // Deletes a negative branch: the branch root and every entity reachable only

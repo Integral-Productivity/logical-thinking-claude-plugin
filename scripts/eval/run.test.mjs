@@ -111,3 +111,19 @@ test('a reviewer that exits non-zero stops the run and writes no ledger row', (t
   const record = JSON.parse(readFileSync(join(s.runsDir, 'stamp-run-1', 'result.json'), 'utf8'));
   assert.equal(record.incomplete, true);
 });
+
+test('a run count that is not a whole number of 1 or more stops before any write', (t) => {
+  for (const runs of [Number('three'), 0, 1.5]) {
+    const s = sandbox(t);
+    const before = readFileSync(s.ledger, 'utf8');
+    assert.throws(() => runEvaluation(options(s, { findingsDir: s.dir, runs })), /--runs must be a whole number/);
+    assert.equal(readFileSync(s.ledger, 'utf8'), before);
+  }
+});
+
+test('a missing model, or both or neither of reviewer and findings, stops the run', (t) => {
+  const s = sandbox(t);
+  assert.throws(() => runEvaluation(options(s, { model: undefined, findingsDir: s.dir })), /--model is required/);
+  assert.throws(() => runEvaluation(options(s, { reviewer: 'true', findingsDir: s.dir })), /exactly one/);
+  assert.throws(() => runEvaluation(options(s, {})), /exactly one/);
+});

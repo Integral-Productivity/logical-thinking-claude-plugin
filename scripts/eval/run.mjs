@@ -12,16 +12,16 @@
 // twin draws a finding that a key would have matched.
 
 import { spawnSync } from 'node:child_process';
-import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { existsSync, mkdirSync, readFileSync, realpathSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
+import { pathToFileURL } from 'node:url';
 import { parseArgs } from 'node:util';
 import { parseFindings } from './findings.mjs';
 import { score } from './score.mjs';
-import { CATEGORIES } from './categories.mjs';
+import { OPERATOR } from './categories.mjs';
+import { json } from './build.mjs';
 import { appendLedgerRows } from './ledger.mjs';
 import { reviewerVersion } from './version.mjs';
-
-const OPERATOR = { [CATEGORIES.insufficiency]: 'insufficiency', [CATEGORIES.sideEffect]: 'side effect' };
 
 export function loadCases(root) {
   const dir = join(root, 'eval', 'cases');
@@ -63,6 +63,7 @@ function ledgerRow(date, version, runId, r) {
 export function runEvaluation({ root, model, reviewer, findingsDir, runs = 3, ledger, runsDir, date, stamp }) {
   if (!model) throw new Error('--model is required');
   if (!reviewer === !findingsDir) throw new Error('give exactly one of --reviewer and --findings');
+  if (!Number.isInteger(runs) || runs < 1) throw new Error(`--runs must be a whole number of 1 or more, not ${runs}`);
   const cases = loadCases(root);
   const version = reviewerVersion(root, model);
   const outcomes = [];
@@ -77,24 +78,24 @@ export function runEvaluation({ root, model, reviewer, findingsDir, runs = 3, le
       try {
         text = reviewer ? review(reviewer, c) : savedFindings(findingsDir, k, c.id);
       } catch (error) {
-        writeFileSync(join(out, 'result.json'), `${JSON.stringify({ runId, version, incomplete: true, failedCase: c.id, error: error.message }, null, 2)}\n`);
+        writeFileSync(join(out, 'result.json'), json({ runId, version, incomplete: true, failedCase: c.id, error: error.message }));
         throw error;
       }
       writeFileSync(join(out, `${c.id}.txt`), text);
       parsed[c.id] = parseFindings(text);
     }
     const result = score(cases, parsed);
-    writeFileSync(join(out, 'result.json'), `${JSON.stringify({ runId, version, ...result }, null, 2)}\n`);
+    writeFileSync(join(out, 'result.json'), json({ runId, version, ...result }));
     outcomes.push({ runId, result });
   }
 
   const reasons = outcomes.flatMap((o, i) => ms1Reasons(i + 1, o.result));
-  if (runs < 3) reasons.push(`only ${runs} run(s); MS1 needs three runs per reviewer version`);
+  if (!(runs >= 3)) reasons.push(`only ${runs} run(s); MS1 needs three runs per reviewer version`);
   appendLedgerRows(ledger, outcomes.flatMap((o) => o.result.categories.map((r) => ledgerRow(date, version, o.runId, r))));
   return { version, runs: outcomes, ms1: { pass: reasons.length === 0, reasons } };
 }
 
-if (import.meta.url === `file://${process.argv[1]}`) {
+if (process.argv[1] && import.meta.url === pathToFileURL(realpathSync(process.argv[1])).href) {
   const root = join(import.meta.dirname, '..', '..');
   const { values } = parseArgs({
     options: {

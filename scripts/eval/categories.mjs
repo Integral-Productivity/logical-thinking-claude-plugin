@@ -8,6 +8,12 @@ export const CATEGORIES = {
   sideEffect: 'Possible negative branch',
 };
 
+// The operator that seeds each category, as the manifest and run messages name it.
+export const OPERATOR = {
+  [CATEGORIES.insufficiency]: 'insufficiency',
+  [CATEGORIES.sideEffect]: 'side effect',
+};
+
 // Category matching ignores case, emphasis, and surrounding punctuation.
 export function normalizeCategory(text) {
   return String(text).toLowerCase().replace(/[^a-z ]+/g, ' ').replace(/\s+/g, ' ').trim();

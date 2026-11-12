@@ -36,6 +36,7 @@ _Resist a change when:_ it makes the CLR review optional by default, or it start
 - **False findings per clean tree** - findings raised on trees with no seeded defect; measured on the evaluation set.
 - **Findings acted on** - share of findings the author accepts, repairs, or answers; measured in sessions.
 - **Chain completion** - share of sessions, human or agent, that finish the chain of questions.
+- **Findings before first action** - number of findings the author reads before the first one they act on; kept within a band so depth does not cause delay; measured in sessions and on the evaluation set.
 
 ## Tracks
 

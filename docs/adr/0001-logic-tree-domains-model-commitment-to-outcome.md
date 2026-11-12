@@ -67,7 +67,7 @@ Options considered:
 
     | Tool (prefix) | Record types |
     |---|---|
-    | Product management, Productboard (`pb:`) | Product, Component, Feature, Subfeature, ReleaseGroup, Release, Objective, KeyResult, Initiative, Opportunity, Finding |
+    | Product management, Productboard (`pb:`) | Product, Component, Feature, Subfeature, ReleaseGroup, Release, Objective, KeyResult, Initiative, Opportunity, Finding, Note (a feedback note) |
     | Self-organization, GlassFrog (`gf:`) | Role (for Purpose), Accountability, Domain, Policy, Project, Action, ChecklistItem, Metric, Tension, Goal, Target |
     | User research, Great Question (`gq:`) | Study, Session, Highlight, Insight, Reel, Response |
     | Other | `research`, `none` |

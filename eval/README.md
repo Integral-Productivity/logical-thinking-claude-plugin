@@ -47,6 +47,6 @@ The run is local and is never part of CI. Give a reviewer command, which runs on
 node scripts/eval/run.mjs --model <model-name> --reviewer "<command>"
 ```
 
-To score saved outputs again, give a findings directory instead: `--findings <dir>`, with `<dir>/run-<k>/<case>.txt` or `<dir>/<case>.txt`.
+To score saved outputs again, give a findings directory instead: `--findings <dir>`, with `<dir>/run-<k>/<case>.txt` for each run. A flat folder of `<dir>/<case>.txt` files holds one set of outputs, so it scores as one run and cannot pass MS1 alone.
 
 Each run writes `eval/runs/<run-id>/` and adds two rows to the results ledger in QUALITY.md, one per category, with the reviewer version (hashes of the skill text, the vocabulary, and this set, plus the model). MS1 passes only when all three runs find every seeded defect and no repaired twin draws a keyed finding.

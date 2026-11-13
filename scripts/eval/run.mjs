@@ -6,7 +6,9 @@
 // The reviewer command runs once per case, with the case tree as JSON on
 // standard input and CASE_ID in its environment; it prints findings on
 // standard output. With --findings, saved outputs are scored instead: the
-// file for run k and a case is <dir>/run-<k>/<case>.txt, else <dir>/<case>.txt.
+// file for run k and a case is <dir>/run-<k>/<case>.txt. A flat folder of
+// <dir>/<case>.txt files holds one set of outputs, so it scores as one run
+// whatever --runs says, and cannot pass MS1 alone.
 // Raw outputs and result.json for each run go to eval/runs/<run-id>/.
 // MS1 passes only when every run finds every seeded defect and no repaired
 // twin draws a finding that a key would have matched.
@@ -41,9 +43,14 @@ function review(reviewer, c) {
   return out.stdout;
 }
 
+// A findings folder is flat when it has no run-1 subfolder.
+const isFlat = (dir) => !existsSync(join(dir, 'run-1'));
+
 function savedFindings(dir, k, id) {
-  const path = [join(dir, `run-${k}`, `${id}.txt`), join(dir, `${id}.txt`)].find((p) => existsSync(p));
-  return path ? readFileSync(path, 'utf8') : '';
+  const folder = isFlat(dir) ? dir : join(dir, `run-${k}`);
+  if (!existsSync(folder)) throw new Error(`findings folder ${folder} is missing`);
+  const path = join(folder, `${id}.txt`);
+  return existsSync(path) ? readFileSync(path, 'utf8') : '';
 }
 
 function ms1Reasons(k, result) {
@@ -67,8 +74,9 @@ export function runEvaluation({ root, model, reviewer, findingsDir, runs = 3, le
   const cases = loadCases(root);
   const version = reviewerVersion(root, model);
   const outcomes = [];
+  const count = findingsDir && isFlat(findingsDir) ? 1 : runs;
 
-  for (let k = 1; k <= runs; k += 1) {
+  for (let k = 1; k <= count; k += 1) {
     const runId = `${stamp}-run-${k}`;
     const out = join(runsDir, runId);
     mkdirSync(out, { recursive: true });
@@ -90,7 +98,8 @@ export function runEvaluation({ root, model, reviewer, findingsDir, runs = 3, le
   }
 
   const reasons = outcomes.flatMap((o, i) => ms1Reasons(i + 1, o.result));
-  if (!(runs >= 3)) reasons.push(`only ${runs} run(s); MS1 needs three runs per reviewer version`);
+  if (count < runs) reasons.push(`the findings folder has no run-<k> subfolders, so it counts as one run`);
+  if (!(count >= 3)) reasons.push(`only ${count} run(s); MS1 needs three runs per reviewer version`);
   appendLedgerRows(ledger, outcomes.flatMap((o) => o.result.categories.map((r) => ledgerRow(date, version, o.runId, r))));
   return { version, runs: outcomes, ms1: { pass: reasons.length === 0, reasons } };
 }

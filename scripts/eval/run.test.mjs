@@ -127,3 +127,25 @@ test('a missing model, or both or neither of reviewer and findings, stops the ru
   assert.throws(() => runEvaluation(options(s, { reviewer: 'true', findingsDir: s.dir })), /exactly one/);
   assert.throws(() => runEvaluation(options(s, {})), /exactly one/);
 });
+
+test('a flat findings folder scores as one run and cannot pass MS1', (t) => {
+  const s = sandbox(t);
+  const dir = perfectFindings(s.dir, 1);
+  const flat = join(s.dir, 'flat');
+  mkdirSync(flat);
+  for (const name of readdirSync(join(dir, 'run-1'))) copyFileSync(join(dir, 'run-1', name), join(flat, name));
+  const { runs, ms1 } = runEvaluation(options(s, { findingsDir: flat, runs: 3 }));
+  assert.equal(runs.length, 1);
+  assert.equal(ms1.pass, false);
+  assert.deepEqual(ms1.reasons, [
+    'the findings folder has no run-<k> subfolders, so it counts as one run',
+    'only 1 run(s); MS1 needs three runs per reviewer version',
+  ]);
+  assert.equal(ledgerRows(s.ledger).length, 2);
+});
+
+test('a findings folder with run subfolders stops when a run folder is missing', (t) => {
+  const s = sandbox(t);
+  const dir = perfectFindings(s.dir, 2);
+  assert.throws(() => runEvaluation(options(s, { findingsDir: dir, runs: 3 })), /run-3 is missing/);
+});

@@ -78,7 +78,11 @@ test('fewer than three runs cannot pass MS1', (t) => {
 
 test('the ledger writer replaces the placeholder, then appends, and leaves the rest unchanged', (t) => {
   const s = sandbox(t);
-  const before = readFileSync(s.ledger, 'utf8');
+  // The live ledger may already hold rows, so start from an empty table.
+  const before = readFileSync(s.ledger, 'utf8')
+    .replace(/(^\| Date \| Reviewer version \|.*\n\|[-| ]+\|\n)(?:\|.*\n)+/m, '$1| None yet | | | | | | No evaluation run has taken place |\n');
+  assert.match(before, /^\| None yet \|/m);
+  writeFileSync(s.ledger, before);
   appendLedgerRows(s.ledger, ['| a | b | c | d | e | f | g |']);
   const once = readFileSync(s.ledger, 'utf8');
   assert.equal(once, before.replace(/^\| None yet \|.*$/m, '| a | b | c | d | e | f | g |'));

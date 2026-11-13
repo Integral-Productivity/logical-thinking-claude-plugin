@@ -1,0 +1,2 @@
+- **Cause insufficiency.** More pupils ride the bus [more-riders]: living near a stop is not enough on its own; distance to the stop must also be what kept those pupils off the bus, rather than schedule, parental driving, or preference.
+- **Possible negative branch.** Add a second stop on the school bus route [second-stop]: an extra stop lengthens the run, which foreseeably makes journeys longer or arrivals later for pupils already on the route, and the tree does not draw that.

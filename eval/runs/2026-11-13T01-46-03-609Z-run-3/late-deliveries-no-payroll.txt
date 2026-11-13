@@ -1,0 +1,2 @@
+- **Cause insufficiency.** Enough drivers work on peak days [enough-drivers]: hiring for peak weeks only puts drivers on peak days if those weeks can be forecast and enough seasonal drivers are available to hire then.
+- **Possible negative branch.** Hire seasonal drivers for peak weeks [hire]: recruiting, onboarding and paying seasonal drivers raises labour costs, and the tree does not draw this undesirable effect.

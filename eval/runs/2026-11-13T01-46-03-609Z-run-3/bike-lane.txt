@@ -1,0 +1,2 @@
+- **Entity existence.** Drivers keep out of the marked lane [respect]: painted lanes are often driven, parked or stopped in, so this precondition needs support (enforcement or physical separation) rather than being assumed.
+- **Possible negative branch.** Paint a bike lane on the main road [paint]: a painted line with no physical barrier can lead drivers to pass cyclists more closely and can put cyclists in the door zone of parked cars, so riders who feel safer may face the same or more risk.

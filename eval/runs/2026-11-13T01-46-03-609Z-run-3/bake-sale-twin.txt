@@ -1,0 +1,3 @@
+- **Cause insufficiency.** The stall sells muffins [sells]: ready muffins and visitors are not enough, because the visitors must also want to buy muffins at the price offered.
+- **Cause insufficiency.** The baker stays up late the night before [late-night]: baking the night before only keeps the baker up late if the baking can't start until late or takes a long time.
+- **Possible negative branch.** Bake a batch of muffins the night before [bake]: muffins baked the night before may be less fresh by the time of the sale, and the tree does not show this.

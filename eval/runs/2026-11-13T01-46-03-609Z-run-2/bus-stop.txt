@@ -1,0 +1,2 @@
+- **Possible negative branch.** The route takes longer [longer-route]: a longer route can make the bus arrive at school later or force an earlier pickup, and the tree does not draw this.
+- **Possible negative branch.** More pupils ride the bus [more-riders]: more riders use up the free seats, which can lead to crowding and leave no room for further growth, and the tree does not draw this.

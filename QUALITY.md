@@ -161,7 +161,12 @@ The reviewer is one versioned unit: the skill text, the vocabulary version, the 
 
 | Date | Reviewer version | Category | M1 | M2 | M5 | Notes |
 |---|---|---|---|---|---|---|
-| None yet | | | | | | No evaluation run has taken place |
+| 2026-11-13 | skill:none vocab:none set:ee0da824 model:claude-opus-5-5 | Cause insufficiency | 11/12 (92%); by position 1: 11/12 | 25 | not measured | run 2026-11-13T01-46-03-609Z-run-1; twin breaches 8; unmatched 6 |
+| 2026-11-13 | skill:none vocab:none set:ee0da824 model:claude-opus-5-5 | Possible negative branch | 10/10 (100%); by position 1: 7/7, 2: 3/3 | 12 | not measured | run 2026-11-13T01-46-03-609Z-run-1; twin breaches 3; unmatched 0 |
+| 2026-11-13 | skill:none vocab:none set:ee0da824 model:claude-opus-5-5 | Cause insufficiency | 10/12 (83%); by position 1: 10/12 | 25 | not measured | run 2026-11-13T01-46-03-609Z-run-2; twin breaches 8; unmatched 7 |
+| 2026-11-13 | skill:none vocab:none set:ee0da824 model:claude-opus-5-5 | Possible negative branch | 8/10 (80%); by position 1: 6/7, 2: 2/3 | 13 | not measured | run 2026-11-13T01-46-03-609Z-run-2; twin breaches 2; unmatched 0 |
+| 2026-11-13 | skill:none vocab:none set:ee0da824 model:claude-opus-5-5 | Cause insufficiency | 11/12 (92%); by position 1: 11/12 | 26 | not measured | run 2026-11-13T01-46-03-609Z-run-3; twin breaches 10; unmatched 8 |
+| 2026-11-13 | skill:none vocab:none set:ee0da824 model:claude-opus-5-5 | Possible negative branch | 10/10 (100%); by position 1: 7/7, 2: 3/3 | 12 | not measured | run 2026-11-13T01-46-03-609Z-run-3; twin breaches 3; unmatched 0 |
 
 ## Rebuttal loop
 

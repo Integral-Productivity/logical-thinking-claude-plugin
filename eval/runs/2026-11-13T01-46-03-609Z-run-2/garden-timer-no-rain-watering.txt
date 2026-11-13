@@ -1,0 +1,3 @@
+- **Cause insufficiency.** Beds are watered every morning [watered]: the timer alone cannot water the beds, since that also needs the water supply running, which the tree attaches to the wrong effect, and hoses or sprinklers connected to the taps.
+- **Cause insufficiency.** Plants get enough water [enough-water]: watering every morning gives enough water only if the timer runs long enough for the plants' needs, and once the beds are watered the supply condition here adds nothing.
+- **Possible negative branch.** Install a timer on the garden taps [timer]: a fixed timer also waters on rainy mornings, so beds can get waterlogged and water is wasted.

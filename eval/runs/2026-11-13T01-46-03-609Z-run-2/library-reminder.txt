@@ -1,0 +1,2 @@
+- **Cause insufficiency.** Borrowers know the due date in advance [know-date]: sending a reminder is not enough on its own; the library must also have working contact details, and the borrower must actually see the message before the due date.
+- **Possible negative branch.** Some borrowers turn off library messages [opt-out]: borrowers who opt out stop getting the due-date reminders and other notices, such as holds and overdue alerts, which undercuts the intended effect that more books come back on time.

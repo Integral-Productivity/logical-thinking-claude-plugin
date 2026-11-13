@@ -1,0 +1,3 @@
+- **Cause insufficiency.** More driver hours are available on peak days [more-hours]: adding overtime shifts only produces hours if drivers are willing and able to take them, so the tree needs that condition too.
+- **Cause insufficiency.** Peak-day orders are delivered on time [delivered]: more hours, peaks and free vans are not enough unless the extra hours are large enough to cover the peak-day order volume.
+- **Possible negative branch.** Add overtime shifts for drivers [overtime]: sustained overtime is likely to raise labor costs and cause driver fatigue, which can lead to errors, accidents or turnover, and the tree does not show this.

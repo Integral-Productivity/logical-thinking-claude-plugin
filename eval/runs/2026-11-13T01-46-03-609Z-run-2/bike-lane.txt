@@ -1,0 +1,2 @@
+- **Entity existence.** Drivers keep out of the marked lane [respect]: this precondition is asserted, not shown; drivers often drift into, park in, or turn across a lane that is only painted, so it needs its own support, such as enforcement or a physical separator.
+- **Possible negative branch.** Paint a bike lane on the main road [paint]: if the lane is painted next to parked cars or in narrowed traffic lanes, cyclists may be steered into the door zone or closer to passing vehicles, and the tree does not draw that undesirable effect.

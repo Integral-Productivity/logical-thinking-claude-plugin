@@ -1,0 +1,2 @@
+- **Possible negative branch.** Add overtime shifts for drivers [overtime]: overtime is paid at a premium, so labour cost per delivery foreseeably rises, and the tree does not draw this.
+- **Cause insufficiency.** More driver hours are available on peak days [more-hours]: adding overtime shifts is not enough on its own; drivers must also be willing and allowed to take them.

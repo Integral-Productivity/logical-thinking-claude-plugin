@@ -1,0 +1,3 @@
+- **Cause insufficiency.** More pupils ride the bus [more-riders]: living near a stop is not enough on its own; the pupils must also have no better way to get to school, and the bus must have seats and a timetable that suits them.
+- **Cause insufficiency.** More pupils live near a stop [near-stop]: the second stop only helps if it is placed where pupils live who are not already near the first stop.
+- **Possible negative branch.** Add a second stop on the school bus route [second-stop]: an extra stop makes every trip longer, so pupils who already ride arrive later or decide to stop riding.

@@ -1,0 +1,4 @@
+- **Additional cause.** Borrowers know the due date in advance [know-date]: the date slip or receipt given at checkout already tells borrowers the date, so the reminder mainly helps them remember the date rather than learn it.
+- **Cause insufficiency.** Borrowers know the due date in advance [know-date]: the reminder only informs borrowers if the library has working contact details for them and they actually read the message.
+- **Cause insufficiency.** More books come back on time [on-time]: knowing the date and being able to reach the library are not enough unless borrowers have also finished with the book and choose to return it rather than keep it.
+- **Possible negative branch.** Send a reminder two days before each due date [reminder]: borrowers who get used to the reminders may stop tracking due dates themselves, so books come back late whenever a reminder fails to arrive.

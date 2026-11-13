@@ -1,0 +1,4 @@
+- **Cause insufficiency.** The timer waters the beds on rainy days too [rain-watering]: installing a timer causes this only if the timer also lacks a rain sensor or skip setting, so the tree should add that condition as a second cause in an AND group.
+- **Cause insufficiency.** Plants get enough water [enough-water]: a daily watering is enough only if each cycle also gives the volume the plants need, which can fall short in hot or dry weather.
+- **Additional cause.** Water use rises [water-use]: watering every morning on dry days can also raise water use compared with watering by hand only when needed, so an arrow from [watered] is missing.
+- **Possible negative branch.** The timer waters the beds on rainy days too [rain-watering]: watering on top of rain can leave the beds waterlogged and cause root rot, an undesirable effect the tree does not draw.

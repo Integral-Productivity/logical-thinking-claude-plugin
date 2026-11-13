@@ -1,0 +1,3 @@
+- **Clarity.** Borrowers know the due date in advance [know-date]: borrowers already learn the due date at checkout, so the entity should say what the reminder actually changes, such as "Borrowers remember the due date shortly before it."
+- **Cause insufficiency.** More books come back on time [on-time]: knowing the date and being able to reach the library is not enough; borrowers must also be finished with the book and willing to return it rather than choosing to keep it late.
+- **Possible negative branch.** Some borrowers turn off library messages [opt-out]: borrowers who opt out stop receiving the reminders, and also other notices such as holds and overdue alerts, so the injection can work against itself for exactly the borrowers it bothers.

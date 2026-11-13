@@ -1,0 +1,2 @@
+- **Cause insufficiency.** More books come back on time [on-time]: knowing the due date is not enough; the borrower must also be finished with the book and able to get to the library before the due date.
+- **Possible negative branch.** Send a reminder two days before each due date [reminder]: borrowers who turn off library messages also stop getting hold, overdue and other notices, so this could lead to more late returns and missed pickups, and the tree does not draw that.

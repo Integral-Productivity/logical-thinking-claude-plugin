@@ -1,0 +1,4 @@
+- **Cause insufficiency.** More driver hours are available on peak days [more-hours]: offering overtime shifts gives more hours only if enough drivers accept them and are allowed to work them under hours-of-service limits.
+- **Causality existence.** Peak-day orders are delivered on time [delivered]: that orders arrive in peaks does not help them be delivered on time; it is the reason the extra hours are needed, not a cause of on-time delivery.
+- **Possible negative branch.** Add overtime shifts for drivers [overtime]: overtime is usually paid at a premium, so labour costs per delivery rise, and the tree does not draw this.
+- **Possible negative branch.** Driver fatigue rises [fatigue]: tired drivers work more slowly and make more errors, which can undermine the on-time deliveries the injection is meant to produce, and the tree does not draw this.

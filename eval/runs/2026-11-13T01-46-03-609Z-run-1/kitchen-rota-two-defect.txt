@@ -1,0 +1,3 @@
+- **Cause insufficiency.** The kitchen is cleaned every day [clean]: knowing your day and being home is not enough, because the person must also be willing to clean, for example through some accountability when a day is skipped.
+- **Cause insufficiency.** Each person knows their cleaning day [know-day]: posting the rota is not enough, because each person must also read it and accept their assigned day.
+- **Possible negative branch.** Post a cleaning rota in the shared kitchen [rota]: once a rota exists, people may stop cleaning up after themselves because it is not their day, which leaves more mess for whoever is on duty.

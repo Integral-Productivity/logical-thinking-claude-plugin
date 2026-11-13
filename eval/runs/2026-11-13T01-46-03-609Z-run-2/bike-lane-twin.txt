@@ -1,0 +1,2 @@
+- **Cause insufficiency.** The main road loses parking spaces [parking]: painting a lane removes parking only if the road has no spare width, so the lane must take the space currently used for parking.
+- **Possible negative branch.** Paint a bike lane on the main road [paint]: if the lane takes width from traffic lanes instead of parking, the narrower car lanes can foreseeably slow traffic or cause congestion, and the tree does not draw this.

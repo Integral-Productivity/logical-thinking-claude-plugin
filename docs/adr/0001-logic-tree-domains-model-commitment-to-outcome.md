@@ -94,3 +94,8 @@ Options considered:
 - A Principle class (for service-design or other principles that justify an arrow) may be added if more than one principle appears; today a principle is a Precondition with `assumption_type=principle`.
 
 The three open points of 2026-11-11 were decided on 2026-11-12 (decisions 10 to 12). Decisions 13 to 16 came from the first pilot review on 2026-11-12.
+
+## Source
+
+- [STRATEGY.md, Domain extension](../../STRATEGY.md#domain-extension)
+- [ARCHITECTURE.md, Key decisions](../../ARCHITECTURE.md#key-decisions)

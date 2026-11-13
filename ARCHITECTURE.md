@@ -1,6 +1,6 @@
 ---
 name: Logical Thinking
-last_updated: 2026-11-12
+last_updated: 2026-11-13
 ---
 
 # Logical Thinking Architecture
@@ -31,7 +31,7 @@ The two meet at one point: the **finding**. A finding from either repository nam
 | Guided chain | One tree-building skill per tree type. Runs the chain of questions forward, or in reverse to backfill logic behind an existing solution. Calls the CLR review by default | Later | STRATEGY.md tracks |
 | Evaluation set | Seeded-defect trees, clean trees, and seeded strategy documents, with answer keys | Partial: seeded trees for two categories exist; strategy documents are planned | [QUALITY.md](QUALITY.md#evaluation-set-contract) |
 | Domain extension | Added domains map each class to a logical kind, so the review reads the kind, not the class name | Later | ADR 0001 (Proposed) |
-| Repository checks | node:test scripts that fail a pull request when an architectural rule breaks | One exists | [Fitness functions](#fitness-functions) |
+| Repository checks | node:test scripts that fail a pull request when an architectural rule breaks | Five run in CI | [Fitness functions](#fitness-functions), [ADR 0006](docs/adr/0006-architectural-characteristics-are-guarded-by-fitness-functions.md) |
 
 ## How a review flows
 
@@ -50,6 +50,14 @@ The two meet at one point: the **finding**. A finding from either repository nam
 | The primary user is a self-guided practitioner, human or agent | [ADR 0002](docs/adr/0002-primary-user-is-a-self-guided-practitioner-human-or-agent.md) | Accepted |
 | The CLR review is on by default | [ADR 0003](docs/adr/0003-clr-review-is-on-by-default.md) | Accepted |
 | The core vocabulary is stable after three releases without a breaking change | [ADR 0004](docs/adr/0004-core-vocabulary-is-stable-after-three-releases.md) | Accepted |
+| The plugin judges logic only and shares one finding form with the tool | [ADR 0005](docs/adr/0005-plugin-judges-logic-and-shares-one-finding-form-with-the-tool.md) | Accepted |
+| Architectural characteristics are guarded by fitness functions; static checks block, model runs are scheduled | [ADR 0006](docs/adr/0006-architectural-characteristics-are-guarded-by-fitness-functions.md) | Accepted |
+| Neutrality is checked by a lint and a person | [ADR 0007](docs/adr/0007-neutrality-is-checked-by-a-lint-and-a-person.md) | Accepted |
+| Every strategy claim links to evidence | [ADR 0008](docs/adr/0008-every-strategy-claim-links-to-evidence.md) | Accepted |
+| Metrics are defined before data arrives | [ADR 0009](docs/adr/0009-metrics-are-defined-before-data-arrives.md) | Accepted |
+| The evaluation set is built from neutral seeds and mutation operators | [ADR 0010](docs/adr/0010-the-evaluation-set-is-built-from-neutral-seeds-and-mutation-operators.md) | Accepted |
+| The session record is a local file the author owns | [ADR 0011](docs/adr/0011-the-session-record-is-a-local-file-the-author-owns.md) | Accepted |
+| The reviewer is one versioned unit, and results are kept per category | [ADR 0012](docs/adr/0012-the-reviewer-is-one-versioned-unit-and-results-are-kept-per-category.md) | Accepted |
 
 ## Architectural characteristics
 
@@ -68,19 +76,20 @@ These are the qualities the structure must protect. Each one has at least one fi
 
 ## Fitness functions
 
-A fitness function is an automated or scheduled check that shows whether the system still has a characteristic. The checks follow the pattern of `scripts/check-upload-limits.test.mjs`: build temporary fixtures, run the check, and fail the pull request on a break. Claude branches merge on green CI, so a rule that lives only in prose can be removed without notice.
+A fitness function is an automated or scheduled check that shows whether the system still has a characteristic. The checks follow the pattern of `scripts/check-upload-limits.test.mjs`: build temporary fixtures, run the check, and fail the pull request on a break. The static checks live in `scripts/fitness/`; the Fitness functions workflow runs their tests and then `node scripts/fitness/run.mjs .` on each pull request ([ADR 0006](docs/adr/0006-architectural-characteristics-are-guarded-by-fitness-functions.md)). Claude branches merge on green CI, so a rule that lives only in prose can be removed without notice.
 
 | ID | Protects | Check | Kind | Status |
 |---|---|---|---|---|
 | FF1 | AC8 | Plugin and skill descriptions are within the upload limits | CI, static | Exists |
 | FF2 | AC1 | Every tree-building skill calls the CLR review by default, and no setting turns it off by default | CI, static | Planned, after the first skill |
-| FF3 | AC4 | Fixtures and examples pass a neutrality lint: currency figures, email addresses, and proper nouns outside an allowlist of invented names are flagged for a person to review | CI, static plus review | Planned |
-| FF4 | AC2 | No CLR finding category is a structure category (loops, IDs, unconnected entities) | CI, static | Planned |
+| FF3 | AC4 | Fixtures and examples pass a neutrality lint: email addresses, currency figures, and denylisted names (stored as hashes) fail; other proper nouns are left for a person to review ([ADR 0007](docs/adr/0007-neutrality-is-checked-by-a-lint-and-a-person.md)) | CI, static plus review | Exists; the allowlist of invented names is planned |
+| FF4 | AC2 | No CLR finding category is a structure category (loops, IDs, unconnected entities) | CI, static | Exists; reads the evaluation categories and answer keys until the vocabulary registry exists |
 | FF5 | AC3 | Plugin findings validate against the same finding schema as tool findings | CI, static | Planned, needs a shared schema with the tool repository |
 | FF6 | AC5 | The core vocabulary registry allows additions and rejects a rename or a changed definition | CI, static | Planned, after the registry exists |
 | FF7 | AC5 | With a domain loaded, the core evaluation set still passes at or above its floors | Evaluation run | Later, with the first domain |
 | FF8 | AC1, AC7 | Catch rate, false findings, and the delay measure stay at or above their floors | Evaluation run, scheduled | Planned, see [QUALITY.md](QUALITY.md#metric-charter) |
-| FF9 | All | Every strategy claim links to a metric, a milestone, or a check | CI, static | Planned, see [QUALITY.md](QUALITY.md#strategy-assurance-case) |
+| FF9 | All | Every strategy ID in QUALITY.md links to a metric, a milestone, a check, or an ADR ([ADR 0008](docs/adr/0008-every-strategy-claim-links-to-evidence.md)) | CI, static | Exists |
+| FF10 | All | Each ADR has a number, a Date, a Status, and a Source section, and is listed in the index; every relative Markdown link and heading anchor resolves | CI, static | Exists |
 
 FF7 and FF8 call a language model. They are costly and not fully repeatable, so they run on a schedule and write to the results ledger. They do not block a merge until runs are cheap and stable.
 
@@ -100,7 +109,8 @@ FF7 and FF8 call a language model. They are costly and not fully repeatable, so 
 | `docs/adr/` | Decision records | Exists |
 | `docs/plans/` | Requirements and implementation plans | Exists |
 | `docs/ideation/` | Ranked idea sets | Exists |
-| `scripts/` | Repository checks (fitness functions) | Exists |
+| `scripts/` | Repository checks | Exists |
+| `scripts/fitness/` | Architecture fitness functions FF3, FF4, FF9, and FF10 | Exists |
 | `skills/` | The CLR review and tree-building skills | Planned |
 | `vocabulary/` | Core vocabulary registry | Planned |
 | `eval/` | Evaluation set, answer keys, and run records ([eval/README.md](eval/README.md)) | Exists |

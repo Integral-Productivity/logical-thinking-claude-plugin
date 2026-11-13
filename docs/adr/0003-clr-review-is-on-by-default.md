@@ -33,3 +33,8 @@ Options considered:
 - **The review must be fast enough to stay in the flow.** Depth on request keeps the default output short.
 - **Each new tree-building skill needs a test that the review runs.** This can be an architecture fitness function in CI.
 - **Reversal is expensive.** Making the review optional changes the positioning in STRATEGY.md and the meaning of the metrics.
+
+## Source
+
+- [STRATEGY.md, Positioning](../../STRATEGY.md#positioning)
+- [STRATEGY.md, Boundaries](../../STRATEGY.md#boundaries)

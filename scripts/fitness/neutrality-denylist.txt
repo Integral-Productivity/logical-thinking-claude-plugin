@@ -1,0 +1,7 @@
+# SHA-256 hashes of lower-case words and word pairs that neutral files must not contain.
+# Hashes, not words, so this check itself names no one. One hash per line.
+# Add an entry: printf '%s' 'the words' | sha256sum
+87a8f9079af289bd9d38dd39504fe0a2fb798864f9f63dfdab5d958d5fd1b455
+31a10f140a863aa576464cb652e3170d2d58f5ba34905a51a27537fdf5524f48
+7d519f6793a8833d31aba6660cdaed07cd23456ae7ee534298624bf54fabfc47
+57608c3576da64c346151cd3f5221db4de2b42bb9e1bea66c9d166416bc65764

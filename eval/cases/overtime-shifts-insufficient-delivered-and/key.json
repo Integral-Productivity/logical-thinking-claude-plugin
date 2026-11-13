@@ -7,9 +7,7 @@
       "matchSet": [
         "delivered",
         "more-hours-to-delivered",
-        "vans-to-delivered",
-        "more-hours",
-        "vans"
+        "vans-to-delivered"
       ],
       "expected": "Peak-day orders are delivered on time [delivered] needs another cause; \"Orders arrive in peaks\" is missing."
     }

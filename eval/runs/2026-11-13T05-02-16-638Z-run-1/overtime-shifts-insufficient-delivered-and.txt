@@ -1,0 +1,2 @@
+- **Cause insufficiency.** More driver hours are available on peak days [more-hours]: scheduling overtime shifts adds hours only if drivers actually accept and work them, so driver willingness or availability for overtime is a missing condition.
+- **Possible negative branch.** Add overtime shifts for drivers [overtime]: paying overtime rates raises labor cost per delivery, and the tree does not draw this foreseeable undesirable effect.

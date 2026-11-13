@@ -1,0 +1,5 @@
+**Cause insufficiency.** Pupils at the first stop spend longer on the bus [longer-ride]: a longer route is not enough on its own; the second stop must also lie between the first stop and the school, so those pupils are on board for the detour.
+
+**Cause insufficiency.** More pupils ride the bus [more-riders]: living near a stop and having free seats are not enough; some of the pupils near the new stop must currently not ride because the existing stop is too far away.
+
+**Possible negative branch.** The route takes longer [longer-route]: unless the bus leaves earlier, the longer route will make it arrive at school later, which the tree does not draw.

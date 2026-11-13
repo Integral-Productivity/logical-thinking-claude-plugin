@@ -1,0 +1,4 @@
+- **Cause insufficiency.** More driver hours are available on peak days [more-hours]: adding overtime shifts yields more peak-day hours only if the shifts are scheduled on peak days and drivers actually accept them.
+- **Causality existence.** Peak-day orders are delivered on time [delivered]: "Orders arrive in peaks" does not help orders arrive on time; it sets the condition the other causes must overcome, so it belongs in the effect's scope rather than as a cause in the AND group.
+- **Cause insufficiency.** Peak-day orders are delivered on time [delivered]: the extra hours and vans must be enough for the size of the peak, so the group needs a condition such as "Extra capacity covers peak order volume."
+- **Possible negative branch.** Add overtime shifts for drivers [overtime]: regular overtime foreseeably raises labour costs and driver fatigue, which can lead to errors, accidents or staff turnover, and the tree does not draw this.

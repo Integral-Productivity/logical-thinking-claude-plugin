@@ -6,8 +6,7 @@
       "category": "Cause insufficiency",
       "matchSet": [
         "finish",
-        "shorter-to-finish",
-        "shorter"
+        "shorter-to-finish"
       ],
       "expected": "Members finish the book before the meeting [finish] needs another cause: members must set aside time to read."
     }

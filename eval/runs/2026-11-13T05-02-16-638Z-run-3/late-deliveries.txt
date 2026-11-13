@@ -1,0 +1,2 @@
+- **Cause insufficiency.** Enough drivers work on peak days [enough-drivers]: hiring alone is not enough; enough qualified seasonal drivers must also be available to recruit and must turn up on peak days.
+- **Entity existence.** Seasonal drivers learn the routes before peak weeks [know-routes]: no injection makes this happen, so the tree needs an action such as route training before peak weeks.

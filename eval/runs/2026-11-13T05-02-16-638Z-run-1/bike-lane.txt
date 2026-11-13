@@ -1,0 +1,2 @@
+- **Entity existence.** Drivers keep out of the marked lane [respect]: this precondition is not true on its own, because drivers often park, stop, or swerve into painted lanes when nothing physically stops them, so the tree needs something that makes it hold.
+- **Possible negative branch.** Paint a bike lane on the main road [paint]: painting a lane without a physical barrier can make cyclists feel safer than they are, and the tree does not show the undesirable effect of more cyclists riding in traffic that is still dangerous at intersections and beside parked doors.

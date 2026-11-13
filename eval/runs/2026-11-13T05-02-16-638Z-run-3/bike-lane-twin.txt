@@ -1,0 +1,3 @@
+- **Cause insufficiency.** The main road loses parking spaces [parking]: painting a lane removes parking only if the road is too narrow to keep both the lane and the existing parking, so that condition must be drawn as an AND partner.
+- **Entity existence.** Drivers keep out of the marked lane [respect]: paint alone gives no physical barrier or enforcement, so the tree needs to show why this precondition holds rather than assume it.
+- **Possible negative branch.** Paint a bike lane on the main road [paint]: if the bike lane is taken from the car lanes rather than from parking, car lanes narrow and traffic congestion on the main road can increase, and the tree does not draw this effect.

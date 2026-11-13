@@ -1,0 +1,5 @@
+- **Cause insufficiency.** Beds are watered every morning [watered]: installing the timer is not enough on its own; the water supply must also run every morning, so that precondition belongs in an AND group with the timer here, not on the arrow into Plants get enough water.
+- **Causality existence.** Plants get enough water [enough-water]: the supply running does not water the plants directly, so the arrow from The water supply runs every morning [supply] adds no causal link that is not already carried through the watering.
+- **Cause insufficiency.** Plants get enough water [enough-water]: watering every morning gives enough water only if the timer runs long enough to deliver the volume the plants need.
+- **Cause insufficiency.** Water use rises [water-use]: watering on rainy days raises water use only if the beds were not already being watered on rainy days before the timer was installed.
+- **Possible negative branch.** The timer waters the beds on rainy days too [rain-watering]: watering on top of rain can waterlog the beds and harm the plants, and the tree does not draw this.

@@ -1,0 +1,373 @@
+{
+  "runId": "2026-11-13T05-02-16-638Z-run-1",
+  "version": "skill:none vocab:none set:94136ed3 model:claude-opus-5-5",
+  "categories": [
+    {
+      "category": "Cause insufficiency",
+      "seeded": 12,
+      "found": 10,
+      "byPosition": {
+        "1": {
+          "seeded": 12,
+          "found": 10
+        }
+      },
+      "misses": [
+        {
+          "case": "late-deliveries-insufficient-late-and",
+          "position": 1
+        },
+        {
+          "case": "overtime-shifts-insufficient-delivered-and",
+          "position": 1
+        }
+      ],
+      "m2": 26,
+      "falseFindings": [
+        {
+          "case": "garden-timer",
+          "id": "watered"
+        },
+        {
+          "case": "garden-timer",
+          "id": "enough-water"
+        },
+        {
+          "case": "garden-timer",
+          "id": "water-use"
+        },
+        {
+          "case": "kitchen-rota",
+          "id": "know-day"
+        },
+        {
+          "case": "kitchen-rota",
+          "id": "clean"
+        },
+        {
+          "case": "kitchen-rota",
+          "id": "swaps"
+        },
+        {
+          "case": "late-deliveries",
+          "id": "enough-drivers"
+        },
+        {
+          "case": "late-deliveries",
+          "id": "on-time"
+        },
+        {
+          "case": "library-reminder",
+          "id": "on-time"
+        },
+        {
+          "case": "library-reminder",
+          "id": "annoyed"
+        },
+        {
+          "case": "overtime-shifts",
+          "id": "more-hours"
+        },
+        {
+          "case": "overtime-shifts",
+          "id": "delivered"
+        },
+        {
+          "case": "night-cyclist",
+          "id": "seen"
+        },
+        {
+          "case": "garden-timer-no-rain-watering",
+          "id": "watered"
+        },
+        {
+          "case": "garden-timer-no-rain-watering",
+          "id": "enough-water"
+        },
+        {
+          "case": "kitchen-rota-no-swaps",
+          "id": "clean"
+        },
+        {
+          "case": "late-deliveries-no-payroll",
+          "id": "enough-drivers"
+        },
+        {
+          "case": "late-deliveries-no-payroll",
+          "id": "on-time"
+        },
+        {
+          "case": "library-reminder-no-annoyed",
+          "id": "know-date"
+        },
+        {
+          "case": "library-reminder-no-annoyed",
+          "id": "on-time"
+        },
+        {
+          "case": "overtime-shifts-no-fatigue",
+          "id": "delivered"
+        },
+        {
+          "case": "overtime-shifts-no-fatigue",
+          "id": "more-hours"
+        },
+        {
+          "case": "bake-sale-twin",
+          "id": "late-night"
+        },
+        {
+          "case": "bake-sale-twin",
+          "id": "sells"
+        },
+        {
+          "case": "bike-lane-twin",
+          "id": "parking"
+        },
+        {
+          "case": "book-club-twin",
+          "id": "discussion"
+        }
+      ],
+      "unmatched": [
+        {
+          "case": "garden-timer-insufficient-enough-water-and",
+          "id": "watered"
+        },
+        {
+          "case": "garden-timer-insufficient-enough-water-and",
+          "id": "water-use"
+        },
+        {
+          "case": "kitchen-rota-insufficient-clean-and",
+          "id": "swaps"
+        },
+        {
+          "case": "late-deliveries-insufficient-late-and",
+          "id": "enough-drivers"
+        },
+        {
+          "case": "late-deliveries-insufficient-late-and",
+          "id": "on-time"
+        },
+        {
+          "case": "late-deliveries-insufficient-on-time-and",
+          "id": "enough-drivers"
+        },
+        {
+          "case": "library-reminder-insufficient-on-time-and",
+          "id": "know-date"
+        },
+        {
+          "case": "overtime-shifts-insufficient-delivered-and",
+          "id": "more-hours"
+        },
+        {
+          "case": "garden-timer-two-defect",
+          "id": "watered"
+        },
+        {
+          "case": "kitchen-rota-two-defect",
+          "id": "know-day"
+        },
+        {
+          "case": "bake-sale",
+          "id": "late-night"
+        }
+      ],
+      "twinBreaches": [
+        {
+          "case": "garden-timer",
+          "mutant": "garden-timer-insufficient-enough-water-and",
+          "position": 1
+        },
+        {
+          "case": "kitchen-rota",
+          "mutant": "kitchen-rota-insufficient-clean-and",
+          "position": 1
+        },
+        {
+          "case": "late-deliveries",
+          "mutant": "late-deliveries-insufficient-on-time-and",
+          "position": 1
+        },
+        {
+          "case": "library-reminder",
+          "mutant": "library-reminder-insufficient-on-time-and",
+          "position": 1
+        },
+        {
+          "case": "overtime-shifts",
+          "mutant": "overtime-shifts-insufficient-delivered-and",
+          "position": 1
+        },
+        {
+          "case": "garden-timer",
+          "mutant": "garden-timer-two-defect",
+          "position": 1
+        },
+        {
+          "case": "kitchen-rota",
+          "mutant": "kitchen-rota-two-defect",
+          "position": 1
+        },
+        {
+          "case": "bake-sale-twin",
+          "mutant": "bake-sale",
+          "position": 1
+        }
+      ]
+    },
+    {
+      "category": "Possible negative branch",
+      "seeded": 10,
+      "found": 10,
+      "byPosition": {
+        "1": {
+          "seeded": 7,
+          "found": 7
+        },
+        "2": {
+          "seeded": 3,
+          "found": 3
+        }
+      },
+      "misses": [],
+      "m2": 13,
+      "falseFindings": [
+        {
+          "case": "bus-stop",
+          "id": "longer-route"
+        },
+        {
+          "case": "garden-timer",
+          "id": "rain-watering"
+        },
+        {
+          "case": "library-reminder",
+          "id": "opt-out"
+        },
+        {
+          "case": "overtime-shifts",
+          "id": "overtime"
+        },
+        {
+          "case": "bus-stop-insufficient-more-riders-and",
+          "id": "more-riders"
+        },
+        {
+          "case": "bus-stop-insufficient-more-riders-and",
+          "id": "longer-route"
+        },
+        {
+          "case": "garden-timer-insufficient-enough-water-and",
+          "id": "rain-watering"
+        },
+        {
+          "case": "late-deliveries-insufficient-late-and",
+          "id": "hire"
+        },
+        {
+          "case": "late-deliveries-insufficient-late-and",
+          "id": "know-routes"
+        },
+        {
+          "case": "late-deliveries-insufficient-on-time-and",
+          "id": "hire"
+        },
+        {
+          "case": "overtime-shifts-insufficient-delivered-and",
+          "id": "overtime"
+        },
+        {
+          "case": "bake-sale-twin",
+          "id": "bake"
+        },
+        {
+          "case": "bike-lane-twin",
+          "id": "paint"
+        }
+      ],
+      "unmatched": [],
+      "twinBreaches": [
+        {
+          "case": "overtime-shifts",
+          "mutant": "overtime-shifts-no-fatigue",
+          "position": 1
+        },
+        {
+          "case": "bike-lane-twin",
+          "mutant": "bike-lane",
+          "position": 1
+        }
+      ]
+    }
+  ],
+  "logged": [
+    {
+      "case": "garden-timer",
+      "category": "Causality existence",
+      "id": "enough-water"
+    },
+    {
+      "case": "library-reminder",
+      "category": "Clarity",
+      "id": "know-date"
+    },
+    {
+      "case": "overtime-shifts",
+      "category": "Causality existence",
+      "id": "delivered"
+    },
+    {
+      "case": "night-cyclist",
+      "category": "Additional cause",
+      "id": "seen"
+    },
+    {
+      "case": "path-puddles",
+      "category": "Additional cause",
+      "id": "puddles"
+    },
+    {
+      "case": "late-deliveries-insufficient-late-and",
+      "category": "Additional cause",
+      "id": "late"
+    },
+    {
+      "case": "library-reminder-no-annoyed",
+      "category": "Clarity",
+      "id": "know-date"
+    },
+    {
+      "case": "overtime-shifts-no-fatigue",
+      "category": "Causality existence",
+      "id": "delivered"
+    },
+    {
+      "case": "bake-sale",
+      "category": "Clarity",
+      "id": "ready"
+    },
+    {
+      "case": "bike-lane-twin",
+      "category": "Entity existence",
+      "id": "respect"
+    },
+    {
+      "case": "bike-lane",
+      "category": "Entity existence",
+      "id": "respect"
+    }
+  ],
+  "unreadable": [
+    {
+      "case": "bread-rises",
+      "line": "No reservations: the tree is sound."
+    },
+    {
+      "case": "seeds-sprout",
+      "line": "No reservations: the four AND-grouped conditions together plausibly suffice for the seeds to sprout, and the tree is sound under every CLR category."
+    }
+  ]
+}

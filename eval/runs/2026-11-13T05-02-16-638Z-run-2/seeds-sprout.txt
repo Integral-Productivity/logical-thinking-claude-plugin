@@ -1,0 +1,1 @@
+- **Cause insufficiency.** The seeds sprout [sprout]: viable seeds can still be dormant, so the AND group also needs a precondition that the seeds' dormancy is already broken, for example by cold stratification or scarification.

@@ -1,0 +1,2 @@
+- **Cause insufficiency.** More books come back on time [on-time]: knowing the due date is not enough; borrowers must also be able to get to the library, or renew, before that date.
+- **Cause insufficiency.** Borrowers know the due date in advance [know-date]: sending a reminder is not enough; borrowers must also receive and read it, and those who turn off library messages will not.

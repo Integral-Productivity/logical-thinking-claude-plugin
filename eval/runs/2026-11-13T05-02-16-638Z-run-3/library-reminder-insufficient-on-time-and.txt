@@ -1,0 +1,4 @@
+- **Clarity.** Borrowers know the due date in advance [know-date]: borrowers usually learn the due date at checkout, so it is unclear whether this means "know" or "remember at the right time," and only "remember" is new.
+- **Cause insufficiency.** More books come back on time [on-time]: knowing the due date is not enough; borrowers must also be able and willing to get to the library or a drop box before that date.
+- **Cause insufficiency.** Some borrowers turn off library messages [opt-out]: annoyance alone is not enough; borrowers must also have an easy opt-out and see no value in the other library messages that would be lost.
+- **Possible negative branch.** Some borrowers turn off library messages [opt-out]: borrowers who opt out also stop getting due-date reminders and hold or overdue notices, which reduces the on-time gain and can lead to more late returns and missed holds.

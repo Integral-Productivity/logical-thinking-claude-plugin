@@ -1,0 +1,4 @@
+- **Cause insufficiency.** More driver hours are available on peak days [more-hours]: scheduling overtime shifts is not enough on its own; drivers must also be willing and legally able to take them.
+- **Cause insufficiency.** Driver fatigue rises [fatigue]: overtime alone does not raise fatigue; drivers must also lack enough rest between the longer shifts.
+- **Clarity.** Vans are free for the extra hours [vans]: "free" could mean the vans are available or that they cost nothing, so say "available" if that is meant.
+- **Possible negative branch.** Add overtime shifts for drivers [overtime]: overtime pay raises labour costs on peak days, and the tree does not draw that undesirable effect.

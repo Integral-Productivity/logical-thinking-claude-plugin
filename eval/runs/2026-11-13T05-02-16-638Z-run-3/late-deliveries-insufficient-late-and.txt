@@ -1,0 +1,4 @@
+- **Additional cause.** Deliveries are late on peak days [late]: drivers who don't know the routes also make deliveries late, and the future tree already treats route knowledge as needed for on-time delivery.
+- **Cause insufficiency.** Enough drivers work on peak days [enough-drivers]: hiring gives enough drivers only if enough seasonal candidates can be recruited and actually show up through the peak weeks.
+- **Cause insufficiency.** Deliveries arrive on time on peak days [on-time]: extra drivers can only deliver on time if there are also enough vehicles and loading capacity for them.
+- **Possible negative branch.** Hire seasonal drivers for peak weeks [hire]: inexperienced seasonal drivers may cause more mis-deliveries, damaged parcels or accidents, and the tree does not draw this.

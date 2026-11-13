@@ -1,0 +1,4 @@
+- **Clarity.** Borrowers know the due date in advance [know-date]: borrowers already learn the due date at checkout, so the effect of the reminder should read as "borrowers are reminded of the due date shortly before it."
+- **Cause insufficiency.** More books come back on time [on-time]: knowing the date and being able to reach the library are not enough; the borrower must also have finished with the book or be willing to return it unfinished.
+- **Cause insufficiency.** Some borrowers find the reminders annoying [annoyed]: one reminder per due date is not enough to annoy; the borrower must also get many reminders, for example for many loans, or get them after already returning the book.
+- **Possible negative branch.** Some borrowers turn off library messages [opt-out]: borrowers who turn off messages also stop getting other notices, such as hold pickups and overdue alerts, which may lead to more late returns, and the tree does not draw this.

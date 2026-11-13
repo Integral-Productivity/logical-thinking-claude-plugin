@@ -1,0 +1,3 @@
+- **Entity existence.** Drivers keep out of the marked lane [respect]: painted lanes are often driven, parked, or loaded in, so this precondition probably does not hold without enforcement or a physical barrier, and nothing in the tree secures it.
+- **Possible negative branch.** Paint a bike lane on the main road [paint]: a painted lane with no physical separation can make drivers pass cyclists more closely and can put cyclists in the door zone of parked cars, so cyclists may feel safer while actually being less safe.
+- **Possible negative branch.** Paint a bike lane on the main road [paint]: taking road width for the lane can narrow or remove a traffic or parking lane, which may cause congestion or driver pushback that the tree does not show.

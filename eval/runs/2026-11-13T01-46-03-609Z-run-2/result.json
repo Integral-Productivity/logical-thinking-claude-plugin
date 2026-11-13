@@ -1,0 +1,338 @@
+{
+  "runId": "2026-11-13T01-46-03-609Z-run-2",
+  "version": "skill:none vocab:none set:ee0da824 model:claude-opus-5-5",
+  "categories": [
+    {
+      "category": "Cause insufficiency",
+      "seeded": 12,
+      "found": 10,
+      "byPosition": {
+        "1": {
+          "seeded": 12,
+          "found": 10
+        }
+      },
+      "misses": [
+        {
+          "case": "late-deliveries-insufficient-late-and",
+          "position": 1
+        },
+        {
+          "case": "overtime-shifts-insufficient-delivered-and",
+          "position": 1
+        }
+      ],
+      "m2": 25,
+      "falseFindings": [
+        {
+          "case": "garden-timer",
+          "id": "watered"
+        },
+        {
+          "case": "kitchen-rota",
+          "id": "swaps"
+        },
+        {
+          "case": "kitchen-rota",
+          "id": "clean"
+        },
+        {
+          "case": "late-deliveries",
+          "id": "enough-drivers"
+        },
+        {
+          "case": "library-reminder",
+          "id": "know-date"
+        },
+        {
+          "case": "overtime-shifts",
+          "id": "more-hours"
+        },
+        {
+          "case": "bread-rises",
+          "id": "rises"
+        },
+        {
+          "case": "night-cyclist",
+          "id": "seen"
+        },
+        {
+          "case": "path-puddles",
+          "id": "puddles"
+        },
+        {
+          "case": "bus-stop-no-longer-route",
+          "id": "more-riders"
+        },
+        {
+          "case": "garden-timer-no-rain-watering",
+          "id": "watered"
+        },
+        {
+          "case": "garden-timer-no-rain-watering",
+          "id": "enough-water"
+        },
+        {
+          "case": "kitchen-rota-no-swaps",
+          "id": "clean"
+        },
+        {
+          "case": "kitchen-rota-no-swaps",
+          "id": "clean"
+        },
+        {
+          "case": "kitchen-rota-no-swaps",
+          "id": "know-day"
+        },
+        {
+          "case": "late-deliveries-no-payroll",
+          "id": "enough-drivers"
+        },
+        {
+          "case": "library-reminder-no-annoyed",
+          "id": "know-date"
+        },
+        {
+          "case": "library-reminder-no-annoyed",
+          "id": "on-time"
+        },
+        {
+          "case": "overtime-shifts-no-fatigue",
+          "id": "more-hours"
+        },
+        {
+          "case": "overtime-shifts-no-fatigue",
+          "id": "delivered"
+        },
+        {
+          "case": "bake-sale-twin",
+          "id": "sells"
+        },
+        {
+          "case": "bake-sale-twin",
+          "id": "late-night"
+        },
+        {
+          "case": "bike-lane-twin",
+          "id": "parking"
+        },
+        {
+          "case": "book-club-twin",
+          "id": "discussion"
+        },
+        {
+          "case": "book-club-twin",
+          "id": "too-light"
+        }
+      ],
+      "unmatched": [
+        {
+          "case": "bus-stop-insufficient-more-riders-and",
+          "id": "longer-ride"
+        },
+        {
+          "case": "garden-timer-insufficient-enough-water-and",
+          "id": "rain-watering"
+        },
+        {
+          "case": "kitchen-rota-insufficient-clean-and",
+          "id": "swaps"
+        },
+        {
+          "case": "late-deliveries-insufficient-late-and",
+          "id": "enough-drivers"
+        },
+        {
+          "case": "late-deliveries-insufficient-late-and",
+          "id": "on-time"
+        },
+        {
+          "case": "bake-sale",
+          "id": "late-night"
+        },
+        {
+          "case": "book-club",
+          "id": "discussion"
+        }
+      ],
+      "twinBreaches": [
+        {
+          "case": "garden-timer",
+          "mutant": "garden-timer-insufficient-enough-water-and",
+          "position": 1
+        },
+        {
+          "case": "kitchen-rota",
+          "mutant": "kitchen-rota-insufficient-clean-and",
+          "position": 1
+        },
+        {
+          "case": "late-deliveries",
+          "mutant": "late-deliveries-insufficient-on-time-and",
+          "position": 1
+        },
+        {
+          "case": "library-reminder",
+          "mutant": "library-reminder-insufficient-on-time-and",
+          "position": 1
+        },
+        {
+          "case": "overtime-shifts",
+          "mutant": "overtime-shifts-insufficient-delivered-and",
+          "position": 1
+        },
+        {
+          "case": "garden-timer",
+          "mutant": "garden-timer-two-defect",
+          "position": 1
+        },
+        {
+          "case": "kitchen-rota",
+          "mutant": "kitchen-rota-two-defect",
+          "position": 1
+        },
+        {
+          "case": "bake-sale-twin",
+          "mutant": "bake-sale",
+          "position": 1
+        }
+      ]
+    },
+    {
+      "category": "Possible negative branch",
+      "seeded": 10,
+      "found": 8,
+      "byPosition": {
+        "1": {
+          "seeded": 7,
+          "found": 6
+        },
+        "2": {
+          "seeded": 3,
+          "found": 2
+        }
+      },
+      "misses": [
+        {
+          "case": "library-reminder-no-annoyed",
+          "position": 1
+        },
+        {
+          "case": "kitchen-rota-two-defect",
+          "position": 2
+        }
+      ],
+      "m2": 13,
+      "falseFindings": [
+        {
+          "case": "bus-stop",
+          "id": "longer-route"
+        },
+        {
+          "case": "bus-stop",
+          "id": "more-riders"
+        },
+        {
+          "case": "garden-timer",
+          "id": "rain-watering"
+        },
+        {
+          "case": "library-reminder",
+          "id": "opt-out"
+        },
+        {
+          "case": "overtime-shifts",
+          "id": "overtime"
+        },
+        {
+          "case": "overtime-shifts",
+          "id": "fatigue"
+        },
+        {
+          "case": "bus-stop-insufficient-more-riders-and",
+          "id": "more-riders"
+        },
+        {
+          "case": "garden-timer-insufficient-enough-water-and",
+          "id": "rain-watering"
+        },
+        {
+          "case": "late-deliveries-insufficient-late-and",
+          "id": "hire"
+        },
+        {
+          "case": "late-deliveries-insufficient-on-time-and",
+          "id": "hire"
+        },
+        {
+          "case": "library-reminder-insufficient-on-time-and",
+          "id": "reminder"
+        },
+        {
+          "case": "overtime-shifts-insufficient-delivered-and",
+          "id": "overtime"
+        },
+        {
+          "case": "bike-lane-twin",
+          "id": "paint"
+        }
+      ],
+      "unmatched": [],
+      "twinBreaches": [
+        {
+          "case": "overtime-shifts",
+          "mutant": "overtime-shifts-no-fatigue",
+          "position": 1
+        },
+        {
+          "case": "bike-lane-twin",
+          "mutant": "bike-lane",
+          "position": 1
+        }
+      ]
+    }
+  ],
+  "logged": [
+    {
+      "case": "garden-timer",
+      "category": "Causality existence",
+      "id": "enough-water"
+    },
+    {
+      "case": "overtime-shifts",
+      "category": "Causality existence",
+      "id": "delivered"
+    },
+    {
+      "case": "night-cyclist",
+      "category": "Additional cause",
+      "id": "seen"
+    },
+    {
+      "case": "garden-timer-insufficient-enough-water-and",
+      "category": "Additional cause",
+      "id": "water-use"
+    },
+    {
+      "case": "late-deliveries-insufficient-late-and",
+      "category": "Additional cause",
+      "id": "late"
+    },
+    {
+      "case": "overtime-shifts-no-fatigue",
+      "category": "Causality existence",
+      "id": "peaks"
+    },
+    {
+      "case": "bike-lane",
+      "category": "Entity existence",
+      "id": "respect"
+    }
+  ],
+  "unreadable": [
+    {
+      "case": "seeds-sprout",
+      "line": "No reservations: the tree is sound."
+    }
+  ]
+}

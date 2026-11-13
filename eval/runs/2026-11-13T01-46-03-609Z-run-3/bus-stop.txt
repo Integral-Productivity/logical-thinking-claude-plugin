@@ -1,0 +1,3 @@
+- **Cause insufficiency.** More pupils ride the bus [more-riders]: living near a stop and having free seats are not enough; the newly covered pupils must also choose the bus over how they get to school now.
+- **Cause insufficiency.** Pupils at the first stop spend longer on the bus [longer-ride]: a longer route only lengthens their ride if the second stop comes after the first stop on the way to school.
+- **Possible negative branch.** The route takes longer [longer-route]: unless the departure time moves earlier, the bus will arrive at school later, making pupils late; if it does move earlier, first-stop pupils must be picked up earlier.

@@ -1,0 +1,3 @@
+- **Cause insufficiency.** The kitchen is cleaned every day [clean]: knowing their day, having supplies and being home does not make people clean; they must also be willing to do their assigned turn.
+- **Cause insufficiency.** The kitchen is cleaned every day [clean]: the chain only gives "every day" if the rota assigns someone to every day of the week, which the tree does not state.
+- **Possible negative branch.** Post a cleaning rota in the shared kitchen [rota]: when one person skips their day, others may leave the mess because it is "not their day," so the kitchen goes uncleaned.

@@ -1,0 +1,3 @@
+- **Clarity.** Borrowers know the due date in advance [know-date]: borrowers usually already learn the due date at checkout, so this should say what the reminder adds, such as "Borrowers remember the due date shortly before it arrives."
+- **Cause insufficiency.** Borrowers know the due date in advance [know-date]: sending a reminder is not enough on its own; the borrower must also have current contact details on file and actually see the message.
+- **Possible negative branch.** Some borrowers turn off library messages [opt-out]: borrowers who opt out stop getting the reminders, and also overdue and hold notices, so this branch undercuts the know-date path for exactly those borrowers.

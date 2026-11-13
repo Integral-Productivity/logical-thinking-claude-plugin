@@ -1,0 +1,3 @@
+- **Cause insufficiency.** Borrowers know the due date in advance [know-date]: a reminder only informs borrowers if it actually reaches them, which also needs current contact details for each borrower and that they read the message.
+- **Cause insufficiency.** More books come back on time [on-time]: knowing the date and being able to reach the library are not enough, since borrowers who have not finished the book or still want it will renew or keep it late anyway.
+- **Possible negative branch.** Send a reminder two days before each due date [reminder]: sending a reminder for every loan adds ongoing cost and staff or system effort, and the tree does not show that undesirable effect.

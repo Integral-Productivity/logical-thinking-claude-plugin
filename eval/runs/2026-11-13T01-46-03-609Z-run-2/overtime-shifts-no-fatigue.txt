@@ -1,0 +1,5 @@
+- **Causality existence.** Orders arrive in peaks [peaks]: peak arrivals do not help orders get delivered on time; they are the reason the extra hours are needed, so this arrow should be a condition on the need rather than a cause of on-time delivery.
+- **Cause insufficiency.** More driver hours are available on peak days [more-hours]: scheduling overtime shifts adds hours only if enough drivers actually accept and work those shifts.
+- **Cause insufficiency.** Peak-day orders are delivered on time [delivered]: extra hours and free vans are not enough unless the added hours are large enough to cover the peak volume.
+- **Possible negative branch.** Add overtime shifts for drivers [overtime]: long overtime shifts can tire drivers, which leads to more mistakes, accidents, or sick days that the tree does not show.
+- **Possible negative branch.** Add overtime shifts for drivers [overtime]: overtime is paid at a premium rate, so labor costs per delivery rise, and the tree does not show this.

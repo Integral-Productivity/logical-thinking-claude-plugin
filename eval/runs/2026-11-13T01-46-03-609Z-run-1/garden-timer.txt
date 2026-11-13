@@ -1,0 +1,3 @@
+- **Cause insufficiency.** Beds are watered every morning [watered]: installing a timer only waters the beds if the water supply also runs that morning, so "The water supply runs every morning" belongs in an AND group with the timer here, not under "Plants get enough water".
+- **Cause insufficiency.** Plants get enough water [enough-water]: daily morning watering is enough only if the timer is set to run long enough to deliver the volume the plants need.
+- **Possible negative branch.** The timer waters the beds on rainy days too [rain-watering]: added water on already-wet soil can waterlog the beds and harm the plants, and the tree does not draw this.

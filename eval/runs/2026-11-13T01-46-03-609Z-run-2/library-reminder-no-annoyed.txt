@@ -1,0 +1,2 @@
+- **Cause insufficiency.** Borrowers know the due date in advance [know-date]: a reminder only creates that knowledge if the library has a working contact address for the borrower and the message is actually received and read.
+- **Cause insufficiency.** More books come back on time [on-time]: knowing the date and being able to reach the library are not enough; the borrower must also be finished with the book, or willing to return it unfinished, rather than keeping it past the due date.

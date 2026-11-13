@@ -1,0 +1,3 @@
+- **Cause insufficiency.** Enough drivers work on peak days [enough-drivers]: hiring alone is not enough; the seasonal drivers must also be scheduled on the specific peak days, and a peak week does not guarantee that.
+- **Cause insufficiency.** Deliveries arrive on time on peak days [on-time]: enough drivers alone is not enough; there must also be enough vehicles and loading capacity for the extra drivers.
+- **Possible negative branch.** Hire seasonal drivers for peak weeks [hire]: new seasonal drivers who do not know the routes may deliver more slowly or make more errors, which could keep deliveries late.

@@ -1,0 +1,1 @@
+- **Cause insufficiency.** The main road loses parking spaces [parking]: painting a lane removes parking only if the road has no spare width and the lane must take over the parking strip, so that condition needs to be a second cause in an AND group.

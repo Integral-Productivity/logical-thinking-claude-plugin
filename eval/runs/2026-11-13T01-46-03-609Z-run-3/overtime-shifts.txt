@@ -1,0 +1,2 @@
+- **Cause insufficiency.** More driver hours are available on peak days [more-hours]: offering overtime shifts only adds hours if drivers actually accept them, and that precondition is not drawn.
+- **Possible negative branch.** Add overtime shifts for drivers [overtime]: overtime is usually paid at a premium, so labor costs rise, and the tree does not draw this foreseeable undesirable effect.

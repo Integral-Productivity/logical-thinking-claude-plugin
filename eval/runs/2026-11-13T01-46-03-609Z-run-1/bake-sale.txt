@@ -1,0 +1,3 @@
+- **Cause insufficiency.** The stall sells muffins [sells]: having muffins ready is not enough; customers must also come to the stall and want to buy them.
+- **Cause insufficiency.** The baker stays up late the night before [late-night]: baking the night before only leads to a late night if the baking runs past the baker's usual bedtime.
+- **Clarity.** Fresh muffins are ready on the morning of the sale [ready]: muffins baked the night before are a day old by morning, so it is unclear what "fresh" means and what keeps them that way, such as covered storage.

@@ -33,3 +33,8 @@ Options considered:
 - The registry file and FF6 become prerequisites for the domain track.
 - A needed breaking change delays domains by at least three releases. That cost is accepted, because a core that changes under domains breaks every domain at once.
 - The number can change only through a new ADR that supersedes this one.
+
+## Source
+
+- [QUALITY.md, First CLR pass on the strategy](../../QUALITY.md#first-clr-pass-on-the-strategy)
+- [ARCHITECTURE.md, Core vocabulary stability](../../ARCHITECTURE.md#core-vocabulary-stability)

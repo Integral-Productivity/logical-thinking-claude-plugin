@@ -1,0 +1,35 @@
+name: Fitness functions
+
+# Architecture fitness functions (ADR 0006). Each one fails the pull request
+# when a rule in ARCHITECTURE.md breaks: the ADR log and Markdown links (FF10),
+# neutrality (FF3), logic-not-structure (FF4), and strategy traceability (FF9).
+# These checks read files only and call no model.
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  fitness:
+    name: Fitness functions
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Setup Node
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: '22'
+
+      - name: Test the checks
+        run: node --test scripts/fitness/*.test.mjs
+
+      - name: Run the checks
+        run: node scripts/fitness/run.mjs .

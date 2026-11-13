@@ -35,3 +35,7 @@ Options considered:
 - **Agent-only test runs are valid evidence.** The evaluation set can run with no human, which makes the review testable in CI.
 - **Learner support stays as depth on request.** A request for a teaching mode is resisted unless it uses the same findings.
 - **Reversal is expensive.** Changing the primary user changes skill defaults, metrics, and the evaluation set at the same time.
+
+## Source
+
+- [STRATEGY.md, Users](../../STRATEGY.md#users)

@@ -1,6 +1,6 @@
 ---
 name: Logical Thinking
-last_updated: 2026-11-12
+last_updated: 2026-11-13
 ---
 
 # Logical Thinking Quality
@@ -56,6 +56,7 @@ Read each line as "the claims below it, together, are enough for the claim above
   - **Practitioners finish the chain** because T2 guides each step and the review does not stall the flow.
     - Chain is guided: T2, M4, MS2.
     - Review does not stall the flow: BR1, M5.
+  - **The method serves its primary user (U1) with no human present:** ADR 0002, AC6, and the agent-author rule in the evaluation set contract.
   - **Findings read alike across both repositories:** T3, FF5.
   - **The method works in real domains without core change:** T5, B3, RS1, FF6, FF7, MS3.
   - **The boundaries hold:** B1 (FF4), B2 (session record), B4 (FF3), B5 and B6 (judgment at each review).
@@ -172,7 +173,7 @@ Rebuttals are the only field evidence of false findings. At each quality review,
 
 ## Decision register
 
-Changes to floors, targets, operators, or the reviewer version policy are recorded as ADRs in [docs/adr/](docs/adr/). Open decisions:
+Changes to floors, targets, operators, or the reviewer version policy are recorded as ADRs in [docs/adr/](docs/adr/). The contracts in this file are recorded in ADR 0008 (assurance case), ADR 0009 (metric charter), ADR 0010 (evaluation set), ADR 0011 (session record), and ADR 0012 (reviewer version and ledger). Open decisions:
 
 - The M2 floor (plan: "The planner sets the threshold, because no baseline exists today").
 - The band for M5 (M5 itself was added to STRATEGY.md on 2026-11-12).

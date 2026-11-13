@@ -1,0 +1,3 @@
+- **Cause insufficiency.** More driver hours are available on peak days [more-hours]: offering overtime shifts adds hours only if drivers actually accept them on those days.
+- **Cause insufficiency.** Peak-day orders are delivered on time [delivered]: extra hours and free vans help only if driver hours are what limits peak-day delivery, not, say, loading or dispatch capacity.
+- **Possible negative branch.** Add overtime shifts for drivers [overtime]: overtime pay at premium rates raises labour costs, and the tree does not draw that effect.

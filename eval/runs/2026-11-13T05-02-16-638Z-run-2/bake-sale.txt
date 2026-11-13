@@ -1,0 +1,2 @@
+- **Cause insufficiency.** The stall sells muffins [sells]: ready muffins are not enough on their own; customers must also come to the stall and want to buy them.
+- **Cause insufficiency.** The baker stays up late the night before [late-night]: baking the night before leads to a late night only if the baker also cannot start the batch early in the evening.

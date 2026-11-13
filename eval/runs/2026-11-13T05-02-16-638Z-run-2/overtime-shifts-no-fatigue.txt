@@ -1,0 +1,2 @@
+- **Possible negative branch.** Add overtime shifts for drivers [overtime]: Overtime raises labor cost and driver fatigue, which can lead to more accidents or errors on peak days, and the tree does not draw this.
+- **Cause insufficiency.** More driver hours are available on peak days [more-hours]: Adding overtime shifts gives more hours only if drivers actually accept them and the shifts fall on peak days.

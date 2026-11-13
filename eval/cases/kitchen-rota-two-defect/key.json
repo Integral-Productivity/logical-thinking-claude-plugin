@@ -7,9 +7,7 @@
       "matchSet": [
         "clean",
         "know-day-to-clean",
-        "home-to-clean",
-        "know-day",
-        "home"
+        "home-to-clean"
       ],
       "expected": "The kitchen is cleaned every day [clean] needs another cause; \"Cleaning supplies are kept stocked\" is missing."
     },

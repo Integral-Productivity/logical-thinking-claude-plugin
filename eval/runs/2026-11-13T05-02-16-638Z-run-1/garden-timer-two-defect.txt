@@ -1,0 +1,3 @@
+- **Cause insufficiency.** Beds are watered every morning [watered]: a timer alone is not enough; the taps must also be connected by hose or drip line to the beds and the timer set to a morning schedule.
+- **Cause insufficiency.** Plants get enough water [enough-water]: a daily morning watering is not enough by itself; each run must also deliver enough water for the plants' needs in the current weather.
+- **Possible negative branch.** Install a timer on the garden taps [timer]: the timer will keep watering on rainy days, which can overwater the beds and waste water, and nobody may notice when its battery dies.

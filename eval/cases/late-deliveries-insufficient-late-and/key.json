@@ -6,8 +6,7 @@
       "category": "Cause insufficiency",
       "matchSet": [
         "late",
-        "few-drivers-to-late",
-        "few-drivers"
+        "few-drivers-to-late"
       ],
       "expected": "Deliveries are late on peak days [late] needs another cause; \"Orders arrive in peaks\" is missing."
     }

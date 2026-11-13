@@ -33,7 +33,7 @@ test('removing one condition from a two-arrow group leaves a plain arrow', () =>
   assert.equal(mutant.entities.length, 2);
   const [kept] = mutant.arrows;
   assert.equal(entry.category, 'Cause insufficiency');
-  assert.deepEqual(entry.matchSet, ['z', kept.id, kept.from]);
+  assert.deepEqual(entry.matchSet, ['z', kept.id]);
   assert.match(entry.expected, /\[z\]/);
   assert.deepEqual(validateTree(mutant), []);
 });
@@ -48,7 +48,7 @@ test('removing one condition from a three-arrow group keeps a two-arrow group', 
   const { mutant, entry } = removeCondition(tree, 's-and');
   assert.equal(mutant.groups.length, 1);
   assert.equal(mutant.groups[0].arrows.length, 2);
-  assert.equal(entry.matchSet.length, 5);
+  assert.equal(entry.matchSet.length, 3);
   assert.deepEqual(validateTree(mutant), []);
 });
 

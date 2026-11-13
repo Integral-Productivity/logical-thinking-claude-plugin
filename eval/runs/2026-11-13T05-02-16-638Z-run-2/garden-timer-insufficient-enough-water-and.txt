@@ -1,0 +1,5 @@
+- **Cause insufficiency.** Beds are watered every morning [watered]: installing a timer is not enough on its own; it must also be programmed for a morning schedule and connected to a turned-on supply.
+- **Cause insufficiency.** Plants get enough water [enough-water]: watering every morning only gives enough water if the run time and flow match what the plants need, which may not hold in hot spells.
+- **Cause insufficiency.** The timer waters the beds on rainy days too [rain-watering]: a timer only waters on rainy days if it has no rain sensor or skip function, so that condition belongs in an AND group with the timer.
+- **Additional cause.** Water use rises [water-use]: a fixed daily schedule can also raise water use on dry days, if it waters more often or longer than the old manual routine did.
+- **Possible negative branch.** The timer waters the beds on rainy days too [rain-watering]: watering already wet beds can waterlog the soil and cause root rot, but the tree does not draw this undesirable effect.

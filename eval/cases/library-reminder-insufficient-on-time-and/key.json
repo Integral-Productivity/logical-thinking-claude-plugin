@@ -6,8 +6,7 @@
       "category": "Cause insufficiency",
       "matchSet": [
         "on-time",
-        "know-date-to-on-time",
-        "know-date"
+        "know-date-to-on-time"
       ],
       "expected": "More books come back on time [on-time] needs another cause; \"Borrowers can reach the library before the due date\" is missing."
     }

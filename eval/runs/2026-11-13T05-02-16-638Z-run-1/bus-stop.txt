@@ -1,0 +1,1 @@
+- **Possible negative branch.** The route takes longer [longer-route]: unless the schedule changes, the bus reaches school later, and moving the departure earlier to avoid that means an earlier pickup at the first stop; the tree draws neither effect.

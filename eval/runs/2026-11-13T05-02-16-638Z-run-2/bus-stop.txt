@@ -1,0 +1,4 @@
+- **Clarity.** More pupils live near a stop [near-stop]: as worded this suggests pupils move house, when the intended claim is that more pupils' homes are now within walking distance of a stop.
+- **Cause insufficiency.** More pupils ride the bus [more-riders]: being near a stop and having free seats is not enough; those pupils must also currently get to school some other way and be willing to switch to the bus.
+- **Cause insufficiency.** Pupils at the first stop spend longer on the bus [longer-ride]: a longer route only lengthens their ride if the second stop comes after the first stop on the way to school, which the tree does not state.
+- **Possible negative branch.** The route takes longer [longer-route]: a longer route also means the bus either reaches school later or has to start its run earlier, and the tree does not draw this undesirable effect.

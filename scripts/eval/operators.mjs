@@ -77,7 +77,9 @@ export function removeCondition(seed, groupId) {
     mutant,
     entry: {
       category: CATEGORIES.insufficiency,
-      matchSet: [effect, ...incoming.map((x) => x.id), ...incoming.map((x) => x.from)],
+      // The effect and the arrows into it, not the causes above it (ADR 0013):
+      // a finding about a cause is a different reservation, also on the twin.
+      matchSet: [effect, ...incoming.map((x) => x.id)],
       expected: `${textOf(seed, effect)} [${effect}] needs another cause; "${textOf(seed, removed.from)}" is missing.`,
     },
   };

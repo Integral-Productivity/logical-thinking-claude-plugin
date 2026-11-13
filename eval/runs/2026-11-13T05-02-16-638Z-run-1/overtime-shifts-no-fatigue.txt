@@ -1,0 +1,5 @@
+- **Causality existence.** Peak-day orders are delivered on time [delivered]: "Orders arrive in peaks" [peaks] does not help orders arrive on time; it is the reason deliveries are under strain, so it is context rather than a cause in this AND group.
+- **Cause insufficiency.** Peak-day orders are delivered on time [delivered]: extra hours and free vans are not enough on their own; the added hours must also be large enough to cover the peak order volume.
+- **Cause insufficiency.** More driver hours are available on peak days [more-hours]: adding overtime shifts is not enough; drivers must also be willing to take the shifts, and the shifts must fall on the peak days.
+- **Possible negative branch.** Add overtime shifts for drivers [overtime]: paying overtime will predictably raise labour cost per delivery, and the tree does not show this.
+- **Possible negative branch.** Add overtime shifts for drivers [overtime]: longer shifts can lead to driver fatigue, which raises the risk of accidents, delivery errors and staff turnover, and the tree does not show this.

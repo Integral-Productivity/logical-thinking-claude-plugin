@@ -1,0 +1,2 @@
+- **Cause insufficiency.** More pupils ride the bus [more-riders]: living near a stop is not enough on its own, because the bus must also have spare seats and those pupils must not already walk, cycle, or get driven.
+- **Possible negative branch.** Add a second stop on the school bus route [second-stop]: an extra stop makes every trip longer, which could make pupils already on the route arrive later or ride longer, an undesirable effect the tree does not draw.

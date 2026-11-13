@@ -1,0 +1,2 @@
+- **Cause insufficiency.** Deliveries arrive on time on peak days [on-time]: enough drivers who know the routes still cannot deliver on time unless there are also enough vehicles for the extra seasonal drivers to drive.
+- **Additional cause.** Deliveries are late on peak days [late]: higher parcel volume per route and peak-day traffic can make deliveries late even when enough drivers work, so too few drivers may not be the only cause.

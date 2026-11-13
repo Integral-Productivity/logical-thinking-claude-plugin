@@ -22,7 +22,7 @@ A tree is JSON with three lists. IDs are lowercase slugs, so removing an entity 
 
 Seeds, lookalikes, and hand-written twins also have `id`, `title`, and `checks`. The review never sees these fields.
 
-A key lists the repaired twin and the seeded defects in position order. Each entry has the `category`, a `matchSet` of entity and arrow IDs, and an `expected` sentence for people to read. A finding counts as found when its category matches and the ID it names is in the match set; the wording is not scored.
+A key lists the repaired twin and the seeded defects in position order. Each entry has the `category`, a `matchSet` of entity and arrow IDs (for Cause insufficiency, the effect and the arrows into it, per [ADR 0013](../docs/adr/0013-cause-insufficiency-keys-match-the-effect-not-its-causes.md)), and an `expected` sentence for people to read. A finding counts as found when its category matches and the ID it names is in the match set; the wording is not scored.
 
 ## Add a seed
 
@@ -54,3 +54,4 @@ Each run writes `eval/runs/<run-id>/` and adds two rows to the results ledger in
 ## Baselines
 
 - [2026-11-13, bare model, no skill](baselines/2026-11-13-skill-none.md): MS1 fails. Reviewer in [reviewers/](reviewers/).
+- [2026-11-13, bare model, narrowed keys](baselines/2026-11-13-skill-none-narrow-keys.md): MS1 fails. Keys narrowed by ADR 0013.

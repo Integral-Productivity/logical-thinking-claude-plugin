@@ -1,0 +1,3 @@
+- **Clarity.** Borrowers know the due date in advance [know-date]: borrowers already learn the due date at checkout, so the reminder's real effect is that they remember it close to the deadline, and the text should say that.
+- **Cause insufficiency.** More books come back on time [on-time]: knowing the date and being able to reach the library are not enough, because borrowers must also be done with the book or willing to return it unfinished.
+- **Possible negative branch.** Some borrowers turn off library messages [opt-out]: borrowers who opt out also stop getting overdue notices and hold-ready alerts, so for them late returns and missed pickups may rise.

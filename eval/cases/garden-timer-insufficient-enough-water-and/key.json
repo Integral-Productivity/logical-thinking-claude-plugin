@@ -6,8 +6,7 @@
       "category": "Cause insufficiency",
       "matchSet": [
         "enough-water",
-        "watered-to-enough-water",
-        "watered"
+        "watered-to-enough-water"
       ],
       "expected": "Plants get enough water [enough-water] needs another cause; \"The water supply runs every morning\" is missing."
     }

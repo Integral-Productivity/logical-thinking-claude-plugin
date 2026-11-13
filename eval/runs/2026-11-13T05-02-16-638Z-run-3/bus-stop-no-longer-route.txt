@@ -1,0 +1,2 @@
+- **Possible negative branch.** Add a second stop on the school bus route [second-stop]: an extra stop lengthens the route and journey time, which may make the bus later or put off pupils who already ride it, and the tree does not draw this.
+- **Cause insufficiency.** More pupils live near a stop [near-stop]: a second stop only brings more pupils near a stop if it is placed where pupils live who are not already near the first stop.

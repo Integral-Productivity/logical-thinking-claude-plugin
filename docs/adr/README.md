@@ -18,3 +18,4 @@ To add a record, use the next number, add a Source section, and add a row here. 
 | [10](0010-the-evaluation-set-is-built-from-neutral-seeds-and-mutation-operators.md) | The evaluation set is built from neutral seeds and mutation operators | Accepted |
 | [11](0011-the-session-record-is-a-local-file-the-author-owns.md) | The session record is a local file the author owns | Accepted |
 | [12](0012-the-reviewer-is-one-versioned-unit-and-results-are-kept-per-category.md) | The reviewer is one versioned unit, and results are kept per category | Accepted |
+| [13](0013-cause-insufficiency-keys-match-the-effect-not-its-causes.md) | Cause insufficiency keys match the effect, not its causes | Accepted |

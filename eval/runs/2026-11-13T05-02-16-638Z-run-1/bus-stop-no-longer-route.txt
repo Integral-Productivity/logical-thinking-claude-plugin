@@ -1,0 +1,1 @@
+**Possible negative branch.** Add a second stop on the school bus route [second-stop]: an extra stop lengthens the run, so pupils already on the bus spend longer travelling and the bus may arrive at school later, and the tree does not show this.

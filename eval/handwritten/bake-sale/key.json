@@ -5,8 +5,7 @@
       "category": "Cause insufficiency",
       "matchSet": [
         "sells",
-        "ready-to-sells",
-        "ready"
+        "ready-to-sells"
       ],
       "expected": "The stall sells muffins [sells] needs another cause: people must visit the stall."
     }

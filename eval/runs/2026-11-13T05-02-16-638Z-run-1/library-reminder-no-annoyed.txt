@@ -1,0 +1,4 @@
+- **Clarity.** Borrowers know the due date in advance [know-date]: borrowers already learn the due date at checkout, so the reminder's real effect is that they remember it in time, and the entity should say so.
+- **Cause insufficiency.** Borrowers know the due date in advance [know-date]: the reminder works only if the library has current contact details and the borrower actually reads the message.
+- **Cause insufficiency.** More books come back on time [on-time]: knowing the date and being able to reach the library is not enough, because the borrower must also have finished with the book and still have it to hand.
+- **Possible negative branch.** Send a reminder two days before each due date [reminder]: borrowers may come to rely on the reminder and return books late whenever a reminder fails to arrive or lands in spam.

@@ -1,0 +1,5 @@
+- **Additional cause.** Deliveries are late on peak days [late]: higher parcel volume, traffic or depot loading delays on peak days could also make deliveries late, so too few drivers may not be the only cause.
+- **Cause insufficiency.** Enough drivers work on peak days [enough-drivers]: hiring seasonal drivers is not enough on its own; the company must also be able to recruit enough of them in time, and they must actually turn up on peak days.
+- **Cause insufficiency.** Deliveries arrive on time on peak days [on-time]: enough drivers who know the routes still cannot deliver on time unless there are also enough vans for the extra drivers.
+- **Possible negative branch.** Hire seasonal drivers for peak weeks [hire]: inexperienced seasonal drivers are likely to make more misdeliveries and damage more parcels, and the tree does not draw this undesirable effect.
+- **Possible negative branch.** Seasonal drivers learn the routes before peak weeks [know-routes]: training seasonal drivers takes time from experienced drivers or supervisors just before peak weeks, and the tree does not draw this undesirable effect.

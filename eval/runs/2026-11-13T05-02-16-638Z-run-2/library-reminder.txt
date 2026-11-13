@@ -1,0 +1,3 @@
+- **Clarity.** Borrowers know the due date in advance [know-date]: borrowers already learn the due date at checkout, so the reminder's effect is that they *remember* it near the deadline, and the entity should say that.
+- **Cause insufficiency.** Borrowers know the due date in advance [know-date]: the reminder works only if the library has valid contact details and the borrower still receives library messages.
+- **Possible negative branch.** Some borrowers turn off library messages [opt-out]: these borrowers stop getting reminders and other notices, such as holds and overdue alerts, which cuts into the on-time gain the tree claims.

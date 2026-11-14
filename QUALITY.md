@@ -189,7 +189,7 @@ Changes to floors, targets, operators, or the reviewer version policy are record
 - The M2 floor (plan: "The planner sets the threshold, because no baseline exists today").
 - The band for M5 (M5 itself was added to STRATEGY.md on 2026-11-12).
 - When an evaluation run may block a merge.
-- ADR 0001 open points on fail versus warn.
+- Open points on fail versus warn for Logic Domain checks (now owned in the logic-domains repository; see ADR 0014).
 
 ## Quality review cadence
 

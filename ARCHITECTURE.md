@@ -30,7 +30,7 @@ The two meet at one point: the **finding**. A finding from either repository nam
 | CLR review | Restates any readable tree, or the logic in prose, as entities and arrows, then walks every entity and arrow through the CLR categories. Cause insufficiency comes first and deepest, side effects second | Planned | Plan R6-R16, ADR 0003 |
 | Guided chain | One tree-building skill per tree type. Runs the chain of questions forward, or in reverse to backfill logic behind an existing solution. Calls the CLR review by default | Later | STRATEGY.md tracks |
 | Evaluation set | Seeded-defect trees, clean trees, and seeded strategy documents, with answer keys | Partial: seeded trees for two categories exist; strategy documents are planned | [QUALITY.md](QUALITY.md#evaluation-set-contract) |
-| Domain extension | Added domains map each class to a logical kind, so the review reads the kind, not the class name | Later | ADR 0001 (Proposed) |
+| Domain extension | Added domains map each class to a logical kind, so the review reads the kind, not the class name | Later | [ADR 0014](docs/adr/0014-concrete-logic-domains-live-outside-the-plugin.md) (Accepted) |
 | Repository checks | node:test scripts that fail a pull request when an architectural rule breaks | Five run in CI | [Fitness functions](#fitness-functions), [ADR 0006](docs/adr/0006-architectural-characteristics-are-guarded-by-fitness-functions.md) |
 
 ## How a review flows
@@ -46,7 +46,7 @@ The two meet at one point: the **finding**. A finding from either repository nam
 | Decision | Record | Status |
 |---|---|---|
 | Method and tool live in separate repositories | Tool repository ADR 0001 | Accepted |
-| Domains model the path from commitment to outcome; every class declares a logical kind | [ADR 0001](docs/adr/0001-logic-tree-domains-model-commitment-to-outcome.md) | Proposed |
+| Concrete Logic Domains live in the logic-domains repository; the plugin keeps the extension contract (every class declares a logical kind) | [ADR 0014](docs/adr/0014-concrete-logic-domains-live-outside-the-plugin.md), superseding ADR 0001 | Accepted |
 | The primary user is a self-guided practitioner, human or agent | [ADR 0002](docs/adr/0002-primary-user-is-a-self-guided-practitioner-human-or-agent.md) | Accepted |
 | The CLR review is on by default | [ADR 0003](docs/adr/0003-clr-review-is-on-by-default.md) | Accepted |
 | The core vocabulary is stable after three releases without a breaking change | [ADR 0004](docs/adr/0004-core-vocabulary-is-stable-after-three-releases.md) | Accepted |

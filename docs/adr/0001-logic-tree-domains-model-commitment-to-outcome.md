@@ -4,7 +4,7 @@ Date: 2026-11-11
 
 ## Status
 
-Proposed (2026-11-11). Tried on one initiative before this record was written; all ten competency questions below passed. Open points decided 2026-11-12 (decisions 10 to 12). Amended 2026-11-12 after the first pilot review (decisions 4, 13 to 16, and the CQ-05 and CQ-09 wording).
+Superseded by [ADR 0014](0014-concrete-logic-domains-live-outside-the-plugin.md) (2026-11-14). The domains moved to the logic-domains repository. Before that: Proposed (2026-11-11). Tried on one initiative before this record was written; all ten competency questions below passed. Open points decided 2026-11-12 (decisions 10 to 12). Amended 2026-11-12 after the first pilot review (decisions 4, 13 to 16, and the CQ-05 and CQ-09 wording).
 
 ## Context
 

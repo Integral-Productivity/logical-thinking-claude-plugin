@@ -66,7 +66,7 @@ _Why it serves the approach:_ Three of the four metrics depend on it, so scrutin
 
 ### Domain extension
 
-Design, evaluate, use, and integrate added domains (for example Self-Organization, Product Lifecycle and Customer Progress) in alignment with the default tools. Source marks come first, so each entity shows if it is stated in the source or inferred by backfill.
+Design, evaluate, use, and integrate added domains in alignment with the default tools. Concrete domains (Logic Domains) live outside the plugin; the plugin keeps the extension contract, so every added class declares a logical kind (ADR 0014). Source marks come first, so each entity shows if it is stated in the source or inferred by backfill.
 
 _Why it serves the approach:_ Practitioners apply the method to real problems in their own domain without changing the core.
 
